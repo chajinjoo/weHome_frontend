@@ -1,6 +1,5 @@
 import React from "react";
-
-import ".././Styles/main.scss";
+import "../Pages/Main.scss";
 
 function Main() {
   return (
