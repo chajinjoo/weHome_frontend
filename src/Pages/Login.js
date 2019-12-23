@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Login.scss";
-import logo from "../images/logo.png";
+import login_logo from "../images/login_logo.png";
 import fb from "../images/facebook.png";
 import kakao from "../images/kaka.png";
 import naver from "../images/naver.png";
@@ -53,15 +53,15 @@ class Login extends Component {
     // function Login() {
     return (
       <>
-        <div className="main">
+        <div className="login_main">
           <div className="contents">
             <div>
-              <img className="logo" src={logo} alt="logo" />
+              <img className="login_logo" src={login_logo} alt="login_logo" />
             </div>
             <div className="input_area">
               <div className="text_area">
                 <input
-                  className="text"
+                  className="email_text"
                   type="text"
                   name="id"
                   placeholder="이메일"

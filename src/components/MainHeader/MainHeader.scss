@@ -1,0 +1,23 @@
+.home_header {
+    background-color: #FFFFFF;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.heder_center {
+    width: 850px;
+    height: 510px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.heder_side {
+    width: 270px;
+    height: 510px;
+    border: 1px solid black;
+    background-image: url('../../images/slide6.png');
+    background-size: 100%;
+}
