@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Nav.scss";
-import home_logo from "../../images/home_logo.png";
-import zzim from "../../images/zzim.png";
-import house_logo from "../../images/house_logo.png";
+import home_logo from "../../Images/home_logo.png";
+import zzim from "../../Images/zzim.png";
+import house_logo from "../../Images/house_logo.png";
 
 class Nav extends Component {
   render() {
