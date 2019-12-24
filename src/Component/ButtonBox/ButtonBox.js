@@ -5,46 +5,64 @@ class ButtonBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likesNum: 0,
-      scrapNum: 0
+      likesNum: this.props.likesNum,
+      scrapNum: this.props.scrapNum,
+      isClicked: false,
+      isScraped: false
     };
   }
 
   handleAddLikes = () => {
+    if (this.state.isClicked) {
+      this.state.likesNum = this.state.likesNum - 1;
+    } else {
+      this.state.likesNum = this.state.likesNum + 1;
+    }
     this.setState({
-      likesNum: this.state.likesNum + 1
+      isClicked: this.state.isClicked ? false : true
     });
   };
 
   handleAddScrap = () => {
+    if (this.state.isScraped) {
+      this.state.scrapNum = this.state.scrapNum - 1;
+    } else {
+      this.state.scrapNum = this.state.scrapNum + 1;
+    }
     this.setState({
-      scrapNum: this.state.scrapNum + 1
+      isScraped: this.state.isScraped ? false : true
     });
   };
 
   render() {
     return (
       <div className="buttonBox">
-        <button onClick={this.handleAddLikes}>
+        <button
+          className={this.state.isClicked ? "active" : ""}
+          onClick={this.handleAddLikes}
+        >
           <div
-            className="heartBox"
+            className={this.state.isClicked ? "heartBox2" : "heartBox"}
             style={{
               backgroundImage: `url(${this.props.HeartImg})`
             }}
           ></div>
-          <div className="label">
+          <div className={this.state.isClicked ? "label2" : "label"}>
             {this.props.likes}
             <span className="count">{this.state.likesNum}</span>
           </div>
         </button>
-        <button onClick={this.handleAddScrap}>
+        <button
+          className={this.state.isScraped ? "active2" : ""}
+          onClick={this.handleAddScrap}
+        >
           <div
-            className="bookMarkBox"
+            className={this.state.isScraped ? "bookMarkBox2" : "bookMarkBox"}
             style={{
               backgroundImage: `url(${this.props.HeartImg})`
             }}
           ></div>
-          <div className="label">
+          <div className={this.state.isScraped ? "label2" : "label"}>
             {this.props.scrap}
             <span className="count">{this.state.scrapNum}</span>
           </div>

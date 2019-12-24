@@ -38,5 +38,45 @@
       background-size: 400px;
       margin-right: 25px;
     }
+
+    &.active {
+      background-color: #34C5F0;
+      border: none;
+      color: #ffffff;
+
+      .heartBox2 {
+        width: 30px;
+        height: 40px;
+        background-position: left -66px top -109px;
+        background-repeat: no-repeat;
+        background-size: 400px;
+        margin-right: 25px;
+      }
+
+      .label2 {
+        color: #ffffff;
+        margin-right: 10px;
+      }
+    }
+
+    &.active2 {
+      background-color: #34C5F0;
+      border: none;
+      color: #ffffff;
+
+      .label2 {
+        color: #ffffff;
+        margin-right: 10px;
+      }
+
+      .bookMarkBox2 {
+        width: 30px;
+        height: 40px;
+        background-position: left 10px top -109px;
+        background-repeat: no-repeat;
+        background-size: 400px;
+        margin-right: 25px;
+      }
+    }
   }
 }
