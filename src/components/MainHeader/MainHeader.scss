@@ -1,0 +1,31 @@
+.home_header {
+    background-color: #FFFFFF;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-width: 1800px;
+
+}
+
+.header_center {
+    width: 850px;
+    height: 510px;
+    // border: 1px solid black;
+    margin-right: 20px;
+    background-image: url('../../images/zoom1.png');
+    background-size: 100%;
+    border-radius: 6px;
+    background-position: center;
+}
+
+
+.header_side {
+    width: 270px;
+    height: 510px;
+    // border: 1px solid black;
+    background-image: url('../../images/slide1.png');
+    background-size: 100%;
+    margin-right: 120px;
+    border-radius: 6px;
+}
