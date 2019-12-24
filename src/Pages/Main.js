@@ -1,7 +1,7 @@
 import React from "react";
 import "../Pages/Main.scss";
-import Nav from "../components/Nav/Nav";
-import MainHeader from "../components/MainHeader/MainHeader";
+import Nav from "../Component/Nav/Nav";
+import MainHeader from "../Component/MainHeader/MainHeader";
 
 function Main() {
   return (

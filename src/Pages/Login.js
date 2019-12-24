@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Login.scss";
-import login_logo from "../images/login_logo.png";
-import fb from "../images/facebook.png";
-import kakao from "../images/kaka.png";
-import naver from "../images/naver.png";
+import login_logo from "../Images/login_logo.png";
+import fb from "../Images/facebook.png";
+import kakao from "../Images/kaka.png";
+import naver from "../Images/naver.png";
 
 class Login extends Component {
   state = {
