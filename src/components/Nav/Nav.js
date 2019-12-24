@@ -28,11 +28,13 @@ class Nav extends Component {
           <div className="nav_center">
             <i className="fas fa-search"></i>
             <input className="search" placeholder="오늘의집 통합검색" />
+
             <button className="nav_btn">글쓰기</button>
           </div>
           <div className="nav_right">
             <div className="nav_right"></div>
             <img className="zzim" src={zzim} alt="zzim" />
+
             <span className="nav_txt">로그인</span>
             <span className="border_left">⠀</span>
             <span className="nav_txt">회원가입</span>

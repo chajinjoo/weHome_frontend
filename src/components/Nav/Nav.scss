@@ -18,7 +18,10 @@ body {
     margin-left: 260px;
     margin-top: 10px;
     padding-right: 35px;
+
     cursor: pointer;
+
+
 }
 
 .nav_left {
@@ -37,6 +40,7 @@ body {
     font-weight: bold;
     color: #4A4A4A;
     padding: 15px;
+
     cursor: pointer;
 }
 
@@ -44,6 +48,10 @@ body {
     color: #35C5F0;
     transition: all .3s;
 }
+
+
+
+
 
 .nav_center {
     display: flex;
@@ -86,7 +94,9 @@ body {
     color: rgb(209, 207, 207);
 }
 
+
 .nav_btn {
+
     height: 32px;
     width: 73px;
     border-radius: 50px;
@@ -96,6 +106,7 @@ body {
     color: rgb(29, 185, 233);
     outline: none;
 }
+
 
 .nav_txt {
     font-weight: bold;
@@ -107,6 +118,8 @@ body {
 .nav_txt:hover {
     color: #35C5F0;
     transition: all .3s;
+
+
 }
 
 .border_left {
@@ -137,12 +150,14 @@ body {
     font-weight: bold;
     color: #4A4A4A;
     padding: 12px;
+
     cursor: pointer;
 }
 
 .category_list:hover {
     color: #35C5F0;
     transition: all .3s;
+
 }
 
 .category_right {
@@ -161,11 +176,14 @@ body {
     color: #8f8d8d;
     font-size: 15px;
     font-weight: bold;
+
     cursor: pointer;
 }
 
 .download:hover {
     color: #35C5F0;
     transition: all .3s;
+
+
 
 }
