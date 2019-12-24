@@ -1,0 +1,23 @@
+.menuicon_container {
+    min-width: 1800px;
+    background-color: #FFFFFF;
+    height: 170px;
+}
+
+.menuicon_lists {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 120px;
+}
+
+.menuicon_img {
+    width: 140px;
+    margin-top: 20px;
+}
+
+.munuicon_txt {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
