@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import "./Styles/reset.scss";
 import Main from "./Pages/Main";
 import Router from "./Router";
+import KnowHow from "./Pages/KnowHow";
 
-ReactDOM.render(<Router />, document.getElementById("root"));
+ReactDOM.render(<KnowHow />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

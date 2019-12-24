@@ -1,0 +1,42 @@
+.rightMainBox {
+  border-bottom: 1px solid lightgray
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  p {
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  a {
+    font-size: 13px;
+    color: #757575;
+  }
+}
+
+.rightTitle {
+  margin-bottom: 8px;
+
+  p {
+    font-size: 18px;
+    font-weight: 900;
+
+  }
+}
+
+.create-at {
+  font-size: 12px;
+  color: #bdbdbd;
+  margin-bottom: 10px;
+}
+
+
+.sharing {
+  margin: 20px 0 15px 0;
+  font-size: 12px;
+  font-weight: 900;
+}
