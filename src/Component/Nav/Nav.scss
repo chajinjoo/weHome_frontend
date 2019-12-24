@@ -18,6 +18,10 @@ body {
     margin-left: 260px;
     margin-top: 10px;
     padding-right: 35px;
+
+    cursor: pointer;
+
+
 }
 
 .nav_left {
@@ -36,7 +40,17 @@ body {
     font-weight: bold;
     color: #4A4A4A;
     padding: 15px;
+
+    cursor: pointer;
 }
+
+.nav_list:hover {
+    color: #35C5F0;
+    transition: all .3s;
+}
+
+
+
 
 
 .nav_center {
@@ -80,7 +94,9 @@ body {
     color: rgb(209, 207, 207);
 }
 
-.btn {
+
+.nav_btn {
+
     height: 32px;
     width: 73px;
     border-radius: 50px;
@@ -91,10 +107,19 @@ body {
     outline: none;
 }
 
-.txt {
+
+.nav_txt {
     font-weight: bold;
     color: #8f8d8d;
     font-size: 15.5px;
+    cursor: pointer;
+}
+
+.nav_txt:hover {
+    color: #35C5F0;
+    transition: all .3s;
+
+
 }
 
 .border_left {
@@ -125,6 +150,14 @@ body {
     font-weight: bold;
     color: #4A4A4A;
     padding: 12px;
+
+    cursor: pointer;
+}
+
+.category_list:hover {
+    color: #35C5F0;
+    transition: all .3s;
+
 }
 
 .category_right {
@@ -143,4 +176,14 @@ body {
     color: #8f8d8d;
     font-size: 15px;
     font-weight: bold;
+
+    cursor: pointer;
+}
+
+.download:hover {
+    color: #35C5F0;
+    transition: all .3s;
+
+
+
 }
