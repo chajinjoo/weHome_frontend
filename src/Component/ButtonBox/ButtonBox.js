@@ -5,8 +5,8 @@ class ButtonBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likesNum: this.props.likesNum,
-      scrapNum: this.props.scrapNum,
+      likesNum: props.likesNum,
+      scrapNum: props.scrapNum,
       isClicked: false,
       isScraped: false
     };
@@ -14,9 +14,9 @@ class ButtonBox extends React.Component {
 
   handleAddLikes = () => {
     if (this.state.isClicked) {
-      this.state.likesNum = this.state.likesNum - 1;
+      this.setState({ likesNum: this.state.likesNum - 1 });
     } else {
-      this.state.likesNum = this.state.likesNum + 1;
+      this.setState({ likesNum: this.state.likesNum + 1 });
     }
     this.setState({
       isClicked: this.state.isClicked ? false : true
@@ -25,9 +25,9 @@ class ButtonBox extends React.Component {
 
   handleAddScrap = () => {
     if (this.state.isScraped) {
-      this.state.scrapNum = this.state.scrapNum - 1;
+      this.setState({ scrapNum: this.state.scrapNum - 1 });
     } else {
-      this.state.scrapNum = this.state.scrapNum + 1;
+      this.setState({ scrapNum: this.state.scrapNum + 1 });
     }
     this.setState({
       isScraped: this.state.isScraped ? false : true
