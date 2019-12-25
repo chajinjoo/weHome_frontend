@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: flex-end;
     min-width: 1800px;
-
 }
 
 .center_container {
@@ -14,37 +13,89 @@
     height: 510px;
     overflow: hidden; 
     margin-right: 20px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .header_center {
-    width: 100%;
-    height: 100%;
-    // border: 1px solid black;
-    background-image: url('../../Images/zoom1.png');
-    // background-size: 100%;
     border-radius: 6px;
     background-position: center;
+    position: relative;
     background-size: cover;
     transition: all 0.3s ease;
 }
 
+.header_center_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
 
-// .outer-div
-// {
-//   height: 100vh;
-//   overflow: hidden; 
-// }
-// .inner-div
-// {
-//   height: 100%;
-//   width: 100%;
-//   background-size: cover;
-//   background-position: center;
-//   transition: all 0.5s ease;
-//   background-image: url('http://www.tipue.com/img/yes.jpg');
+}
 
 .header_center:hover {
   transform: scale(1.05);
 }
 
 
+
+.center_img_txt1 {
+    left: 310px; 
+    width: 450px; 
+    bottom: 320px; 
+    font-size: 1em; 
+    font-weight: bold; 
+    position: absolute;
+    color: #FFFFFF;
+}
+
+.center_img_txt2 {
+    left: 310px; 
+    width: 500px; 
+    bottom: 270px; 
+    font-size: 2em; 
+    font-weight: bold; 
+    position: absolute;
+    color: #FFFFFF;
+}
+
+.center_img_txt3 {
+    left: 340px; 
+    width: 500px; 
+    bottom: 240px; 
+    font-size: 0.8em; 
+    position: absolute;
+    color: #FFFFFF;
+}
+
+.center_pic {
+    left: 310px; 
+    width: 500px; 
+    bottom: 240px; 
+    border-radius: 100px;
+    width: 25px;
+    position: absolute;
+}
+
+.center_btn {
+    left: 940px; 
+    height: 50px;
+    width: 140px; 
+    bottom: 240px; 
+    font-size: 1em; 
+    font-weight: bold; 
+    position: absolute;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    // background-color: #4CAF50;
+}
+
+
+ㅎ.center_btn:hover {
+    background-color: #34C5F0;
+    color: #FFFFFF;
+    border: none;
+}

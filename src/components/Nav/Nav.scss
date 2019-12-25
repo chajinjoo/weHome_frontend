@@ -94,7 +94,6 @@
 
 
 .nav_btn {
-
     height: 32px;
     width: 73px;
     border-radius: 50px;
@@ -103,6 +102,12 @@
     font-weight: bold;
     color: rgb(29, 185, 233);
     outline: none;
+    cursor: pointer;
+}
+
+.nav_btn:hover {
+    background-color: #34C5F0;
+    color: white;
 }
 
 
@@ -116,8 +121,6 @@
 .nav_txt:hover {
     color: #35C5F0;
     transition: all .3s;
-
-
 }
 
 .border_left {
@@ -148,14 +151,12 @@
     font-weight: bold;
     color: #4A4A4A;
     padding: 12px;
-
     cursor: pointer;
 }
 
 .category_list:hover {
     color: #35C5F0;
     transition: all .3s;
-
 }
 
 .category_right {
@@ -167,6 +168,7 @@
     width: 22px;
     margin-left: 480px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .download {
