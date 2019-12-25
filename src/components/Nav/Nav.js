@@ -17,7 +17,19 @@ class Nav extends Component {
             <img className="home_logo" src={home_logo} alt="home_logo" />
             <ul className="nav_lists">
               <li className="nav_list">커뮤니티</li>
-              <li className="nav_list">스토어</li>
+              <li id="list1" className="nav_list">
+                스토어
+              </li>
+              {/* <ul className="store_lists">
+                <li className="store_list">스토어홈</li>
+                <li className="store_list">카테고리</li>
+                <li className="store_list">신혼가구</li>
+                <li className="store_list">베스트</li>
+                <li className="store_list">특가</li>
+                <li className="store_list">결산sale</li>
+                <li className="store_list">리퍼브</li>
+                <li className="store_list">기획전</li>
+              </ul> */}
               <li className="nav_list">전문가시공</li>
             </ul>
             {/* <span className="comu">커뮤니티</span>

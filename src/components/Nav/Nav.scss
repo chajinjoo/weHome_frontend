@@ -5,6 +5,9 @@
     height: 80px;
     background-color: #FFFFFF;
     min-width: 1440px;
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
 }
 
 .home_logo {
@@ -12,10 +15,7 @@
     margin-left: 260px;
     margin-top: 10px;
     padding-right: 35px;
-
     cursor: pointer;
-
-
 }
 
 .nav_left {
@@ -27,6 +27,7 @@
     margin-top: 12px;
     display: flex;
     list-style: none;
+    
 }
 
 .nav_list {
@@ -63,6 +64,7 @@
 .zzim {
     width: 40px;
     padding: 3px;
+    cursor: pointer;
 }
 
 .search {
@@ -172,14 +174,11 @@
     color: #8f8d8d;
     font-size: 15px;
     font-weight: bold;
-
     cursor: pointer;
 }
 
 .download:hover {
     color: #35C5F0;
     transition: all .3s;
-
-
-
 }
+
