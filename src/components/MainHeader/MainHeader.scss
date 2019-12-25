@@ -8,24 +8,43 @@
 
 }
 
-.header_center {
+.center_container {
+    // height: 100vh;
     width: 850px;
     height: 510px;
-    // border: 1px solid black;
+    overflow: hidden; 
     margin-right: 20px;
+}
+
+.header_center {
+    width: 100%;
+    height: 100%;
+    // border: 1px solid black;
     background-image: url('../../Images/zoom1.png');
-    background-size: 100%;
+    // background-size: 100%;
     border-radius: 6px;
     background-position: center;
+    background-size: cover;
+    transition: all 0.3s ease;
 }
 
 
-.header_side {
-    width: 270px;
-    height: 510px;
-    // border: 1px solid black;
-    background-image: url('../../Images/slide1.png');
-    background-size: 100%;
-    margin-right: 120px;
-    border-radius: 6px;
+// .outer-div
+// {
+//   height: 100vh;
+//   overflow: hidden; 
+// }
+// .inner-div
+// {
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center;
+//   transition: all 0.5s ease;
+//   background-image: url('http://www.tipue.com/img/yes.jpg');
+
+.header_center:hover {
+  transform: scale(1.05);
 }
+
+

@@ -6,51 +6,85 @@ import kakao from "../Images/kaka.png";
 import naver from "../Images/naver.png";
 
 class Login extends Component {
-  state = {
-    // id password state값 으로 정의
-    id: "",
-    password: ""
-  };
-  // input value 변경 ==> loginChange
-  loginChange = e => {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: "",
+      isLogin: null
+    };
+  }
+
+  handleEmail = e => {
     this.setState({
-      [e.target.name]: e.target.value //input에 name 속성을 이용, key값을 []로 감싸주고, target.name 값을 받아옴
+      email: e.target.value
     });
   };
-  // 로그인 버튼 클릭 ==> loginClick
-  loginClick = () => {
-    console.log(`ID:${this.state.id}\nPW:${this.state.password}`);
+
+  handlePassword = e => {
+    this.setState({
+      password: e.target.value
+    });
   };
-  loginKeyPress = e => {
-    if (e.key === "Enter") {
-      //input focusdptj Enter키를 누를때 onKeyPress 이벤트 발동
-      this.loginClick();
-    }
 
-    // 서버 접속시,
-    // console.log(id.value)
-    // console.log(password.value)
+  handleSubmit = e => {
+    console.log(`EMAIL:${this.state.email}\nPW:${this.state.password}`);
+    e.preventDefault();
 
-    // fetch('http://10.58.2.125:8000/user/auth', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     email: id.value,
-    //     password: password.value
-    //   })
+    // button.addEventListener('click', () => {
+    //   if (userId.value, userPassword.value) {
+    //     a = true;
+    //   }
 
-    // })
-    //    .then(res => res.json())
-    //    .then(res => {
-    //      alert(res.access_token)
+    //     console.log(userId.value)
+    //     console.log(userPassword.value)
 
-    //      localStorage.setItem('auth_token', res.access_token);
-    //    })
+    //     fetch('http://10.58.1.247:8000/user/auth', {
+    //       method: 'POST',
+    //       body: JSON.stringify({
+    //         email: userId.value,
+    //         password: userPassword.value
+    //       })
+
+    //     })
+    //         .then(res => res.json())
+    //         .then(res => {
+    //           alert(res.access_token)
+
+    //           localStorage.setItem('auth_token', res.access_token);
+    //         })
+
+    const login_info = {
+      method: "POST",
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    fetch("http://localhost:3000/login", login_info)
+      .then(res => {
+        return res.json();
+      })
+      .then(json => {
+        //json형식 {idx: 8, email: "chajanee@gmail.com", success: true}
+        if (json.success === true) {
+          alert("로그인 성공");
+          // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
+          window.localStorage.setItem("userInfo", JSON.stringify(json));
+          //스테이트에 유저정보를 저장한다.
+          this.setState({
+            idx: json.idx,
+            email: json.email,
+            isLogin: json.success
+          });
+          this.props.history.push("/main");
+        } else {
+          alert("이메일 혹은 비밀번호를 확인하세요");
+        }
+      });
   };
   render() {
-    const { id, password } = this.state;
-    const { loginChange, loginClick, loginKeyPress } = this;
-
-    // function Login() {
     return (
       <>
         <div className="login_main">
@@ -59,32 +93,30 @@ class Login extends Component {
               <img className="login_logo" src={login_logo} alt="login_logo" />
             </div>
             <div className="input_area">
-              <div className="text_area">
-                <input
-                  className="email_text"
-                  type="text"
-                  name="id"
-                  placeholder="이메일"
-                  value={id}
-                  onChange={loginChange}
-                />
-              </div>
-              <div className="pwd_area">
-                <input
-                  className="password"
-                  type="password"
-                  name="password"
-                  placeholder="비밀번호"
-                  value={password}
-                  onChange={loginChange}
-                  onKeyPress={loginKeyPress}
-                />
-              </div>
-              <div className="login_area">
-                <button className="login_btn" onClick={loginClick}>
-                  <strong>로그인</strong>
-                </button>
-              </div>
+              <form onSubmit={this.handleSubmit}>
+                <div className="text_area">
+                  <input
+                    className="email_text"
+                    placeholder="이메일"
+                    value={this.state.email}
+                    onChange={this.handleEmail}
+                  />
+                </div>
+                <div className="pwd_area">
+                  <input
+                    className="password"
+                    placeholder="비밀번호"
+                    value={this.state.password}
+                    onChange={this.handlePassword}
+                    type="password"
+                  />
+                </div>
+                <div className="login_area">
+                  <button type="submit" className="login_btn">
+                    <strong>로그인</strong>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 
