@@ -11,8 +11,7 @@ class Login extends Component {
 
     this.state = {
       email: "",
-      password: "",
-      isLogin: null
+      password: ""
     };
   }
 
@@ -67,21 +66,25 @@ class Login extends Component {
         return res.json();
       })
       .then(json => {
-        //json형식 {idx: 8, email: "chajanee@gmail.com", success: true}
-        if (json.success === true) {
-          alert("로그인 성공");
-          // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
-          window.localStorage.setItem("userInfo", JSON.stringify(json));
-          //스테이트에 유저정보를 저장한다.
-          this.setState({
-            idx: json.idx,
-            email: json.email,
-            isLogin: json.success
-          });
-          this.props.history.push("/main");
-        } else {
-          alert("이메일 혹은 비밀번호를 확인하세요");
-        }
+        const token = json.access_token;
+        //json형식 {email: "chajanee@gmail.com", success: true}
+        // if (json. === true) {
+        // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
+        window.localStorage.setItem("access_token", token);
+        //스테이트에 유저정보를 저장한다.
+        // this.setState({
+        //   email: '',
+        //   password: ''
+        // });
+        this.props.history.push("/main");
+        alert("로그인 성공");
+        // } else {
+        //   alert("이메일 혹은 비밀번호를 확인하세요");
+        // }
+      })
+      .catch(err => {
+        console.log(err.response);
+        alert("로그인실패");
       });
   };
   render() {

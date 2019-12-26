@@ -2,36 +2,26 @@ import React from "react";
 import "./Sidepic.scss";
 
 function Sidepic() {
+  const numbers = Array(8)
+    .fill()
+    .map((e, i) => i + 1);
   return (
     <>
       <div className="slide">
-        <input type="radio" name="pos" id="pos1" checked />
-        <input type="radio" name="pos" id="pos2" checked />
-        <input type="radio" name="pos" id="pos3" checked />
-        <input type="radio" name="pos" id="pos4" checked />
-        <input type="radio" name="pos" id="pos5" checked />
-        <input type="radio" name="pos" id="pos6" checked />
-        <input type="radio" name="pos" id="pos7" checked />
-        <input type="radio" name="pos" id="pos8" checked />
+        {numbers.map(num => (
+          <input type="radio" name="pos" id={`pos${num}`} key={num} checked />
+        ))}
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {numbers.map(num => (
+            <li key={num}></li>
+          ))}
         </ul>
         <p className="bullet">
-          <label for="pos1">1</label>
-          <label for="pos2">2</label>
-          <label for="pos3">3</label>
-          <label for="pos4">4</label>
-          <label for="pos5">5</label>
-          <label for="pos6">6</label>
-          <label for="pos7">7</label>
-          <label for="pos8">8</label>
+          {numbers.map(num => (
+            <label key={num} for={`pos${num}`}>
+              {num}
+            </label>
+          ))}
         </p>
       </div>
     </>
