@@ -62,7 +62,7 @@ class Login extends Component {
         "Content-Type": "application/json"
       }
     };
-    fetch("http://localhost:3000/login", login_info)
+    fetch("http://10.58.6.121:8000/user/auth", login_info)
       .then(res => {
         return res.json();
       })

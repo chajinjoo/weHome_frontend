@@ -45,14 +45,23 @@
 }
 
 
-
-
-
 .nav_center {
     display: flex;
     align-items: center;
     margin-left: 220px;
+    .search {
+        height: 35px;
+        width: 230px;
+        margin-right: 10px;
+        font-size: 16px;
+        padding-left: 40px;
+        outline: none;
+        border-radius: 5px;
+        border: 0.5px solid #DBDBDB;
+        background-color: #FFFFFF;
+    }
 }
+
 
 .nav_right {
     display: flex;
@@ -61,23 +70,31 @@
 
 }
 
-.zzim {
-    width: 40px;
-    padding: 3px;
+.cart_box {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    margin: 5px;
+    align-items: center;
     cursor: pointer;
+    border-radius: 100%;
 }
 
-.search {
-    height: 35px;
-    width: 230px;
-    margin-right: 10px;
-    font-size: 16px;
-    padding-left: 40px;
+.cart_logo {
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    width: 22px;
+    height: 22px;
+    color: white;
     outline: none;
-    border-radius: 5px;
-    border: 0.5px solid #DBDBDB;
-    background-color: #FFFFFF;
 }
+
+.cart_box:hover {
+    background-color: #34C5F0;
+    color: white;
+}
+
 
 .fas {
     font-size: 20px;
@@ -180,8 +197,4 @@
 .download:hover {
     color: #35C5F0;
     transition: all .3s;
-}
-
-.store_lists {
-
 }
