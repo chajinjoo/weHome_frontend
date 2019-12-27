@@ -1,25 +1,51 @@
 import React from "react";
 import "./Usercomment.scss";
-import lineHeart from "../../../../Images/heart.png";
-import fillHeart from "../../../../Images/fillHeart.png";
 
 class UserComment extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLiked: false,
+      like: "좋아요",
+      hate: "좋아요 취소",
+      likeHeartNum: 5
+    };
+  }
+
+  handleLike = () => {
+    const { isLiked, likeHeartNum } = this.state;
+    const offSet = isLiked ? -1 : 1;
+    this.setState({
+      likeHeartNum: likeHeartNum + offSet,
+      isLiked: !isLiked
+    });
+  };
+
   render() {
+    const { userPhoto, userId, contents_text, time } = this.props.Usercomment;
+    const { isLiked, like, hate, likeHeartNum } = this.state;
+    // console.log(this.props.Usercomment);
     return (
       <div className="user_comment">
-        <img src={this.props.Usercomment.userPhoto} alt="userimg" />
+        <img src={userPhoto} alt="userimg" />
         <div className="user_comment_box">
           <div className="user_comment_top">
-            <span>{this.props.Usercomment.userId}</span>
-            <span>{this.props.Usercomment.contents_text}</span>
+            <span>{userId}</span>
+            <span>{contents_text}</span>
           </div>
           <div className="user_comment_bottom">
-            <span className="comment_time">
-              {this.props.Usercomment.time}시간 전
+            <span className="comment_time">{time}시간 전</span>
+            <div
+              onClick={this.handleLike}
+              className={isLiked ? "fill_heart_img" : "line_heart_img"}
+            ></div>
+            <span className="comment_likes_num">{likeHeartNum}</span>
+            <span className="comment_likes">
+              <button className="comment_like_btn">
+                {isLiked ? hate : like}
+              </button>
             </span>
-            <img className="heart_img" src={lineHeart} alt="하트" />
-            <span className="comment_likes">좋아요</span>
-            <button>신고</button>
+            <button onClick={this.props.handleRemove}>삭제</button>
           </div>
         </div>
       </div>

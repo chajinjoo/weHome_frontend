@@ -9,7 +9,7 @@ class ButtonBox extends React.Component {
       scrapNum: props.scrapNum,
       isClicked: false,
       isScraped: false,
-      top: -75
+      top: -80
     };
   }
 
@@ -31,12 +31,12 @@ class ButtonBox extends React.Component {
       {
         scrapNum: scrapNum + offSet,
         isScraped: !isScraped,
-        top: -20
+        top: -10
       },
       () => {
         setTimeout(() => {
           this.setState({
-            top: -75
+            top: -80
           });
         }, 1000);
       }

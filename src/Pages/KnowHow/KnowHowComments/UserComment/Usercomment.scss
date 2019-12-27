@@ -47,9 +47,23 @@
           content: " ·";
         }
 
+        &.comment_likes_num {
+          margin-left: 10px;
+        }
+
+        &.comment_likes_num::after {
+          content: " ·";
+        }
+
         &.comment_likes {
           font-weight: bold;
           margin-left: 5px;
+
+          .comment_like_btn {
+            font-size: 13px;
+            color: #757575;
+          }
+
         }
 
         &.comment_likes::after {
@@ -58,10 +72,22 @@
       }
 
 
-      .heart_img {
+      .line_heart_img {
         width: 13px;
         height: 13px;
         margin-left: 5px;
+        background-image: url("../../../../Images/heart.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .fill_heart_img {
+        width: 13px;
+        height: 13px;
+        margin-left: 5px;
+        background-image: url("../../../../Images/fillHeart.png");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       button {

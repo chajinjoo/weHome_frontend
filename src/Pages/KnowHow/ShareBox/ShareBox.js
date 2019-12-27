@@ -10,7 +10,7 @@ class ShareBox extends React.Component {
     this.state = {
       isClicked: false,
       isCopy: false,
-      top: -220,
+      top: -250,
       shareBox: [
         { url: "https://___.com", class: "facebook_share" },
         { url: "https://___.com", class: "kakao_share" },
@@ -36,7 +36,7 @@ class ShareBox extends React.Component {
       () => {
         setTimeout(() => {
           this.setState({
-            top: -220
+            top: -250
           });
         }, 500);
       }

@@ -1,0 +1,30 @@
+export const commentData = {
+  Usercomment: [
+    [
+      {
+        id: 0,
+        userPhoto:
+          "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+        userId: "jotang",
+        time: 2,
+        contents_text: "댓글을 한번 달아보겠습니다."
+      },
+      {
+        id: 1,
+        userPhoto:
+          "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+        userId: "jotang",
+        time: 2,
+        contents_text: "댓글이 잘 달릴까요?"
+      },
+      {
+        id: 2,
+        userPhoto:
+          "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+        userId: "jotang",
+        time: 2,
+        contents_text: "자 도전 시작!"
+      }
+    ]
+  ]
+};
