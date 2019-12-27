@@ -10,7 +10,7 @@ import naverstory from "../../Images/naverstory.png";
 class Footer extends Component {
   render() {
     return (
-      <div className="footer">
+      <footer>
         <div className="layout_footer">
           <div className="layout_footer_content">
             <div className="footer_top">
@@ -63,7 +63,7 @@ class Footer extends Component {
             </p>
           </div>
         </div>
-      </div>
+      </footer>
     );
   }
 }
