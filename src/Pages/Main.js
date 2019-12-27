@@ -1,8 +1,8 @@
 import React from "react";
 import "../Pages/Main.scss";
-import Nav from "../components/Nav/Nav";
-import MainHeader from "../components/MainHeader/MainHeader";
-import Manuicon from "../components/Menuicon/Menuicon";
+import Nav from "../Component/Nav/Nav";
+import MainHeader from "../Component/MainHeader/MainHeader";
+import Manuicon from "../Component/Menuicon/Menuicon";
 
 function Main() {
   return (

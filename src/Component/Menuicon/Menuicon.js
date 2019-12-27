@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Menuicon.scss";
-import menuicon1 from "../../images/manuicon1.png";
-import menuicon2 from "../../images/manuicon2.png";
-import menuicon3 from "../../images/manuicon3.png";
-import menuicon4 from "../../images/manuicon4.png";
-import menuicon5 from "../../images/manuicon5.png";
-import menuicon6 from "../../images/manuicon6.png";
-import menuicon7 from "../../images/manuicon7.png";
-import menuicon8 from "../../images/manuicon8.png";
+import menuicon1 from "../../Images/manuicon1.png";
+import menuicon2 from "../../Images/manuicon2.png";
+import menuicon3 from "../../Images/manuicon3.png";
+import menuicon4 from "../../Images/manuicon4.png";
+import menuicon5 from "../../Images/manuicon5.png";
+import menuicon6 from "../../Images/manuicon6.png";
+import menuicon7 from "../../Images/manuicon7.png";
+import menuicon8 from "../../Images/manuicon8.png";
 
 class Manuicon extends Component {
   render() {
