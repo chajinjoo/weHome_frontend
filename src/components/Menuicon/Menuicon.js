@@ -33,7 +33,7 @@ class Manuicon extends Component {
             </li>
             <li>
               <img className="menuicon_img" src={menuicon5} alt="menuicon5" />
-              <div className="munuicon_txt">시공간편사진</div>
+              <div className="munuicon_txt">시공간편상담</div>
             </li>
             <li>
               <img className="menuicon_img" src={menuicon6} alt="menuicon6" />

@@ -10,24 +10,23 @@
     z-index: 100;
 }
 
-.home_logo {
-    width: 88px;
-    margin-left: 260px;
-    margin-top: 10px;
-    padding-right: 35px;
-    cursor: pointer;
-}
 
 .nav_left {
     display: flex;
     align-items: center;
+    .home_logo {
+        width: 88px;
+        margin-left: 260px;
+        margin-top: 10px;
+        padding-right: 35px;
+        cursor: pointer;
+    }
 }
 
 .nav_lists {
     margin-top: 12px;
     display: flex;
     list-style: none;
-    
 }
 
 .nav_list {
@@ -35,7 +34,6 @@
     font-weight: bold;
     color: #4A4A4A;
     padding: 15px;
-
     cursor: pointer;
 }
 
@@ -43,7 +41,6 @@
     color: #35C5F0;
     transition: all .3s;
 }
-
 
 .nav_center {
     display: flex;
@@ -60,14 +57,6 @@
         border: 0.5px solid #DBDBDB;
         background-color: #FFFFFF;
     }
-}
-
-
-.nav_right {
-    display: flex;
-    align-items: center;
-    // margin-left: 100px;
-
 }
 
 .cart_box {
@@ -95,8 +84,7 @@
     color: white;
 }
 
-
-.fas {
+.fa-search {
     font-size: 20px;
     position: absolute;
     margin-left: 12px;
@@ -106,7 +94,6 @@
 .search::placeholder {
     color: rgb(209, 207, 207);
 }
-
 
 .nav_btn {
     height: 32px;
@@ -142,8 +129,6 @@
     border-left: 1px solid #8f8d8d;
     margin-left: 10px;
 }
-
-//category
 
 .category {
     background-color: gray;
@@ -197,4 +182,33 @@
 .download:hover {
     color: #35C5F0;
     transition: all .3s;
+}
+
+
+
+
+.nav_right {
+    display: flex;
+    text-align: center;
+    .aa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        &:hover{
+            background-color: #34C5F0;
+            color: white;
+        }
+        .fa-bookmark .fa-bell .fa-shopping-cart  {
+            height:24px;
+            width: 24px;
+            border-color: #34C5F0;
+            color: rgb(29, 185, 233);
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
 }
