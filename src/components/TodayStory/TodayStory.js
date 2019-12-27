@@ -1,22 +1,25 @@
-import React, { Component } from "react";
-import "./TodayStory.scss";
+import React from "react";
+import StoryLeft from "./StoryLeft";
+import TodayStoryData from "./TodayStoryData";
 
-class TodayStory extends Component {
-  render() {
-    const { img, title, user_img, user } = this.props;
-    return (
-      <>
-        <div className="today_story_box">
-          <img className="data_img" src={img} alt="data_img" />
-          <div className="data_title">{title}</div>
-          <div className="boxbox">
-            <img className="data_uesr_img" src={user_img} alt="data_uesr_img" />
-            <div className="data_user">{user}</div>
-          </div>
-        </div>
-      </>
-    );
-  }
+function TodayStory() {
+  return (
+    <div>
+      <section className="today_story_section">
+        <div>오늘의 스토리</div>
+        {TodayStoryData.map(el => (
+          <StoryLeft
+            key={el.num}
+            // data={el}
+            img={el.data_img}
+            title={el.data_title}
+            user_img={el.data_user_img}
+            user={el.data_user}
+          />
+        ))}
+      </section>
+    </div>
+  );
 }
 
 export default TodayStory;
