@@ -11,17 +11,17 @@ const TodayStoryData = [
   {
     num: 2,
     data_img:
-      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-advices-cover_images-157715921343551276.jpg/320/214",
-    data_title: "1.5룸에 차린 나만의 온라인 문방구",
+      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-advices-cover_images-157734520516693205.jpg/320/214",
+    data_title: "#2 살롱문화 완성하는 테이블웨어",
     data_user_img:
-      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1570579192_SJc5i6U.jpeg/36/36",
+      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1574225844_3PlbF4sp.jpeg/36/36",
     data_user: "휴리랜서"
   },
   {
     num: 3,
     data_img:
-      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-advices-cover_images-157716394339888308.jpg/320/214",
-    data_title: "홈파티도 끄떡없는 주방 상하부장 깔끔 정리법 1편",
+      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-projects-cover_images-157421367047372209.JPG/320/214",
+    data_title: "내 손으로 차근차근 바꿔가는 즐거움",
     data_user_img:
       "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/36/36",
     data_user: "살림허선생"

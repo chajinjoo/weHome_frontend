@@ -88,7 +88,7 @@
     font-size: 20px;
     position: absolute;
     margin-left: 12px;
-    color: #BDBDBD;
+    color: rgb(151, 151, 151);
 }
 
 .search::placeholder {
@@ -190,18 +190,20 @@
 .nav_right {
     display: flex;
     text-align: center;
-    .aa {
+    color: #757575;
+    .nav_icon_box {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 36px;
         height: 36px;
         border-radius: 50%;
+        margin: 2px;
         &:hover{
             background-color: #34C5F0;
             color: white;
         }
-        .fa-bookmark .fa-bell .fa-shopping-cart  {
+        .fa-bookmark .fa-bell .fa-shopping-cart {
             height:24px;
             width: 24px;
             border-color: #34C5F0;
@@ -210,5 +212,19 @@
             cursor: pointer;
         }
     }
+}
 
+.smile {
+    width: 32px;
+}
+
+.nav_icon_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: none;
+    &:hover{
+        color: #34C5F0;
+    }
 }

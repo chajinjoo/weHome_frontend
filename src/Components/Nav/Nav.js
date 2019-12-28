@@ -30,20 +30,25 @@ class Nav extends Component {
           </div>
 
           <div className="nav_right">
-            <div className="aa">
+            <div className="nav_icon_box">
               <i className="far fa-bookmark"></i>
             </div>
-            <div className="aa">
+            <div className="nav_icon_box">
               <i className="far fa-bell"></i>
             </div>
-            <div className="aa">
+            <div className="nav_icon_box">
               <i className="fas fa-shopping-cart"></i>
             </div>
-            <img
-              className="smile"
-              src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/36/36"
-              alt="shopping_cart"
-            />
+            <button className="nav_icon_btn">
+              <div className="nav_icon_box">
+                <img
+                  className="smile"
+                  src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/36/36"
+                  alt="smile"
+                />
+              </div>
+              <i class="fas fa-caret-down"></i>
+            </button>
           </div>
         </div>
 
