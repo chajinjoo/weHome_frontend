@@ -184,13 +184,11 @@
     transition: all .3s;
 }
 
-
-
-
 .nav_right {
     display: flex;
     text-align: center;
     color: #757575;
+    cursor: pointer;
     .nav_icon_box {
         display: flex;
         align-items: center;
@@ -224,6 +222,7 @@
     justify-content: center;
     border: 0;
     outline: none;
+    cursor: pointer;
     &:hover{
         color: #34C5F0;
     }
