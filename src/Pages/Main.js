@@ -1,10 +1,16 @@
 import React from "react";
 import "../Pages/Main.scss";
+<<<<<<< HEAD
 import Nav from "../Components/Nav/Nav";
 import MainHeader from "../Components/MainHeader/MainHeader";
 import Manuicon from "../Components/Menuicon/Menuicon";
 import Footer from "../Components/Footer/Footer";
 import TodayStory from "../Components/TodayStory/TodayStory";
+=======
+import Nav from "../Component/Nav/Nav";
+import MainHeader from "../Component/MainHeader/MainHeader";
+import Manuicon from "../Component/Menuicon/Menuicon";
+>>>>>>> master
 
 function Main() {
   return (

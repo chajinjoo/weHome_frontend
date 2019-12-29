@@ -1,0 +1,145 @@
+.share_box {
+  height: 40px;
+  display: flex;
+  margin-bottom: 20px;
+
+
+  a,
+  button {
+    margin-left: 3px;
+    border-radius: 3px;
+
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .facebook_share {
+    width: 54px;
+    height: 40px;
+    background-color: #3b579d;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: top -142px left 12px;
+    text-indent: -9999px;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  .kakao_share {
+    width: 54px;
+    height: 40px;
+    background-position: top -140px left -49px;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-color: #FAE100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: -9999px;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+  }
+
+  .line_share {
+    width: 54px;
+    height: 40px;
+    background-color: #3aac36;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: top -141px left -109px;
+    text-indent: -9999px;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  .url_share {
+    width: 54px;
+    height: 40px;
+    background-color: #35c5f0;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: top -141px left -172px;
+    text-indent: -9999px;
+    border: none;
+    outline: none;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+.on_url_copy {
+  width: 260px;
+  height: 65px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0.5px solid #bdbdbd;
+  position: absolute;
+  background: #FAFAFA;
+  box-shadow: 0.5px 0.5px 5px 1px lightgray;
+
+  div {
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 192px;
+    height: 30px;
+    font-size: 15px;
+    color: #bdbdbd;
+  }
+
+  button {
+    width: 58px;
+    height: 37px;
+    background: #34C5F0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+  }
+}
+
+.off_url_copy {
+  display: none;
+}
+
+.on_alert_box {
+  width: 400px;
+  padding: 20px 0;
+  border: 1px solid #2980b9;
+  border-radius: 5px;
+  position: absolute;
+  // top: 0;
+  left: -220%;
+  transform: translate(50%, 0);
+  background: #34C5F0;
+  opacity: 0.5;
+  text-align: center;
+  transition: top 0.1s ease;
+
+  span {
+    color: #2980b9;
+    opacity: 100%;
+    font-weight: 900;
+  }
+}
