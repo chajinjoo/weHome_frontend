@@ -14,7 +14,7 @@ const TodayStoryData = [
       "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-advices-cover_images-157734520516693205.jpg/320/214",
     data_title: "#2 살롱문화 완성하는 테이블웨어",
     data_user_img:
-      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1574225844_3PlbF4sp.jpeg/36/36",
+      "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/36/36",
     data_user: "휴리랜서"
   },
   {
