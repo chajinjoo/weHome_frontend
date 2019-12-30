@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Nav.scss";
 import home_logo from "../../Images/home_logo.png";
-import zzim from "../../Images/zzim.png";
 import house_logo from "../../Images/house_logo.png";
 
 class Nav extends Component {
@@ -17,27 +16,39 @@ class Nav extends Component {
             <img className="home_logo" src={home_logo} alt="home_logo" />
             <ul className="nav_lists">
               <li className="nav_list">커뮤니티</li>
-              <li className="nav_list">스토어</li>
+              <li id="list1" className="nav_list">
+                스토어
+              </li>
               <li className="nav_list">전문가시공</li>
             </ul>
-            {/* <span className="comu">커뮤니티</span>
-            <span className="store">스토어</span>
-            <span className="make">전문가시공</span> */}
           </div>
 
           <div className="nav_center">
             <i className="fas fa-search"></i>
             <input className="search" placeholder="오늘의집 통합검색" />
-
             <button className="nav_btn">글쓰기</button>
           </div>
-          <div className="nav_right">
-            <div className="nav_right"></div>
-            <img className="zzim" src={zzim} alt="zzim" />
 
-            <span className="nav_txt">로그인</span>
-            <span className="border_left">⠀</span>
-            <span className="nav_txt">회원가입</span>
+          <div className="nav_right">
+            <div className="nav_icon_box">
+              <i className="far fa-bookmark"></i>
+            </div>
+            <div className="nav_icon_box">
+              <i className="far fa-bell"></i>
+            </div>
+            <div className="nav_icon_box">
+              <i className="fas fa-shopping-cart"></i>
+            </div>
+            <button className="nav_icon_btn">
+              <div className="nav_icon_box">
+                <img
+                  className="smile"
+                  src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/36/36"
+                  alt="smile"
+                />
+              </div>
+              <i class="fas fa-caret-down"></i>
+            </button>
           </div>
         </div>
 
