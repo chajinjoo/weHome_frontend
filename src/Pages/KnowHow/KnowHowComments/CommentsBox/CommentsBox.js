@@ -47,18 +47,20 @@ class CommentsBox extends React.Component {
   }
 
   onSubmit = e => {
+    const { userProfile, userId, userTime } = this.state.loginUser;
+    const { Usercomment } = this.state;
     e.preventDefault();
     this.commentId += 1;
     let UserComments = [
       {
         id: this.commentId,
-        userPhoto: this.state.loginUser.userProfile,
-        userId: this.state.loginUser.userId,
-        time: this.state.loginUser.userTime,
+        userPhoto: userProfile,
+        userId: userId,
+        time: userTime,
         contents_text: e.target.title.value
       }
     ];
-    let addComment = UserComments.concat(this.state.Usercomment);
+    let addComment = UserComments.concat(Usercomment);
     this.setState({
       Usercomment: addComment
     });
@@ -67,7 +69,9 @@ class CommentsBox extends React.Component {
   };
 
   handleRemove = a => {
-    const Arr = this.state.Usercomment;
+    const { Usercomment } = this.state;
+
+    const Arr = Usercomment;
     const newArr = Arr.filter(el => Arr.indexOf(el) !== a);
     console.log(a);
     console.log(newArr);

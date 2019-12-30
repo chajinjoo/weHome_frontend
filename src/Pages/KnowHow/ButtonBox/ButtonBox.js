@@ -21,6 +21,7 @@ class ButtonBox extends React.Component {
       likesNum: likesNum + offSet,
       isClicked: !isClicked
     });
+    console.log(this.state.isClicked);
   };
 
   showNotification = () => {
