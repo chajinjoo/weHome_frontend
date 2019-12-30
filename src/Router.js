@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main";
-// import Signup from './Pages/Signup';
+import Signup from "./Pages/Signup";
 
 class Routes extends React.Component {
   render() {
@@ -9,6 +9,7 @@ class Routes extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
+          <Route exact path="/signup" component={Signup} />
           {/* <Route exact path="/signup" component={Signup} /> */}
         </Switch>
       </Router>

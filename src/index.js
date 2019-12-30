@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./Styles/reset.scss";
 import Main from "./Pages/Main";
 import Router from "./Router";
+import Signup from "./Component/Signup";
 
 ReactDOM.render(<Router />, document.getElementById("root"));
 
