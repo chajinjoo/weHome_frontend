@@ -1,0 +1,36 @@
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .first-content {
+    margin-top: 35px;
+
+    div {
+      width: 700px;
+      ;
+
+      img {
+        margin-bottom: 35px;
+        width: 700px;
+      }
+    }
+
+    .content-title {
+      margin-bottom: 25px;
+      border-left: 3px solid #DCDCDC;
+      height: 30px;
+
+      span {
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: 900;
+
+      }
+    }
+  }
+}
+
+img {
+  width: 700px;
+}

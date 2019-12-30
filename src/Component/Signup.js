@@ -5,7 +5,7 @@ import Logo2 from "../Images/kaka.png";
 import Logo3 from "../Images/naver.png";
 import "./signup.scss";
 
-class Signup extends React.Component {}
+class Signup extends React.Component {
   constructor() {
     super();
     this.state = {

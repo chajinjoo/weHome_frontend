@@ -1,0 +1,44 @@
+.information_wrap {
+  // padding-bottom: 20px;
+  padding: 0 50px;
+  border-bottom: 1px solid #bdbdbd;
+
+
+  .information {
+    padding-top: 20px;
+    width: 700px;
+    margin-bottom: 30px;
+
+    div {
+      display: flex;
+
+      width: 360px;
+      height: 40px;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 15px;
+
+      &.copy_right,
+      &.label_box {
+        border-bottom: 1px solid black;
+      }
+
+      &.label {
+        width: 120px;
+        color: #757575;
+        margin-left: 5px;
+        ;
+      }
+
+      &.value {
+        color: #424242;
+        font-weight: 600;
+      }
+
+      &.copy_right {
+        font-size: 13px;
+        color: #bdbdbd;
+      }
+    }
+  }
+}
