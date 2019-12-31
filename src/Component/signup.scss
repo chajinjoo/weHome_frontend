@@ -1,0 +1,413 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 683px;
+  margin: 0px auto;
+  padding: 40px;
+  letter-spacing: -0.4px;
+  box-sizing: border-box;
+  width: calc(100% - 30px);
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 1px;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+    "Malgun Gothic", sans-serif;
+
+  .mainlogo {
+    width: 88px;
+    height: 31px;
+  }
+  .secondmain {
+    width: 360px;
+    margin: 0 auto;
+    padding: 60px 0px;
+    letter-spacing: -0.4px;
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+      "Malgun Gothic", sans-serif;
+    .signuptitle {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+      font-weight: 700;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+        "Malgun Gothic", sans-serif;
+    }
+    .signupwrap {
+      display: flex;
+      text-align: center;
+      font-size: 12px;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin: 30px 0px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ededed;
+      letter-spacing: -0.4px;
+
+      .signuptitle2 {
+        font-size: 12px;
+        text-align: center;
+        color: #757575;
+        letter-spacing: -0.4px;
+        position: relative;
+        margin: 15px 0px;
+        font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+          "Malgun Gothic", sans-serif;
+      }
+
+      .signupwarp2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: -0.4px;
+        padding: 0 px 0 px 30px;
+
+        .logo {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 48px;
+          margin: 0 10px;
+        }
+        .facebook {
+          background-color: rgb(59, 89, 152);
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .kakao {
+          background-color: rgb(255, 235, 0);
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .naver {
+          background-color: rgb(0, 198, 59);
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+    .form {
+      width: 100%;
+
+      .signuptopwrap {
+        margin: 0 0 30px;
+        .signuptop {
+          font-size: 15px;
+          margin-bottom: 12px;
+          letter-spacing: -0.4px;
+          font-weight: 700;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .emailbody {
+          display: flex;
+          .emailinput {
+            width: 170px;
+            height: 40px;
+          }
+          .emailleft {
+            width: 170px;
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 4px;
+            border: solid 1px #dbdbdb;
+            background-color: #ffffff;
+          }
+          .emailcenter {
+            flex: 0 0 20px;
+            text-align: center;
+            line-height: 40px;
+            color: #dbdbdb;
+            font-size: 15px;
+            font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+              "Malgun Gothic", sans-serif;
+          }
+          .emailright {
+            width: 170px;
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 4px;
+            border: solid 1px #dbdbdb;
+          }
+        }
+      }
+      .passwordwrap {
+        margin: 0px 0px 30px;
+        letter-spacing: -0.4px;
+        .password {
+          font-size: 15px;
+          letter-spacing: -0.4px;
+          font-weight: 700;
+          margin: 0 0 12px;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .passwordtext {
+          font-size: 13px;
+          color: #757575;
+          letter-spacing: -1px;
+          margin: 0 0 12px;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .input {
+          width: 100%;
+          height: 40px;
+          padding: 0 15px;
+          border-radius: 4px;
+          border: solid 1px #dbdbdb;
+        }
+      }
+
+      .passwordresetwrap {
+        margin: 0px 0px 30px;
+
+        .passwordreset {
+          margin: 0 0 12px;
+          font-size: 15px;
+          letter-spacing: -0.4px;
+          font-weight: 700;
+        }
+        .input {
+          width: 100%;
+          height: 40px;
+          padding: 0 15px;
+          border-radius: 4px;
+          border: solid 1px #dbdbdb;
+        }
+      }
+
+      .nicknamewrap {
+        margin: 0px 0px 30px;
+        letter-spacing: -0.4px;
+        .nickname {
+          margin-bottom: 12px;
+          font-size: 15px;
+          font-weight: 700;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .nicknametext {
+          font-size: 13px;
+          letter-spacing: -0.8px;
+          color: #757575;
+          margin: 0 0 12px;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .input {
+          width: 100%;
+          height: 40px;
+          padding: 0 15px;
+          border-radius: 4px;
+          border: solid 1px #dbdbdb;
+        }
+      }
+      .aceesswrap {
+        width: 100%;
+        margin: 0px 0px 30px;
+        .access {
+          padding-bottom: 1px solid black;
+          font-size: 15px;
+          margin-bottom: 5px;
+          margin: 0 0 12px;
+          letter-spacing: -0.4px;
+          font-weight: 700;
+          font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+            "Malgun Gothic", sans-serif;
+        }
+        .access_all {
+          font-size: 14px;
+          border: 1px solid #dbdbdb;
+          margin: 0 0 30px;
+          padding: 23px 23px 6px 16px;
+          .checkboxs {
+            border-bottom: 1px solid #ededed;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.4px;
+            margin-bottom: 16px;
+            padding-bottom: 18px;
+
+            .checkbox {
+              line-height: 18px;
+              padding: 0px 0 0 10px;
+              border-bottom: 1px solid #ededed;
+              padding-bottom: 18px;
+              margin-bottom: 16px;
+              letter-spacing: -0.4px;
+            }
+            .inbox {
+              width: 22px;
+              height: 22px;
+            }
+            .accesstop {
+              font-size: 14px;
+              letter-spacing: -0.4px;
+              display: flex;
+              align-items: center;
+              padding-left: 5px;
+              position: relative;
+              font-weight: 700;
+              font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                "Malgun Gothic", sans-serif;
+            }
+          }
+          .checkboxwrap {
+            box-sizing: border-box;
+            .checkbox1 {
+              font-size: 15px;
+              width: 100%;
+              height: 22px;
+              display: flex;
+              align-items: center;
+              letter-spacing: -0.4px;
+              margin: 0 0 12px;
+              .inbox {
+                width: 22px;
+                height: 22px;
+                background-color: white;
+              }
+              .sidebox {
+                font-size: 14px;
+                padding: 0px 0 0 5px;
+                letter-spacing: -2px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+              .righttext {
+                font-size: 12px;
+                color: #35c5f0;
+                padding: 2px 2px 2px 2px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+            }
+            .checkbox2 {
+              width: 100%;
+              height: 22px;
+              font-size: 14px;
+              display: flex;
+              align-items: center;
+              letter-spacing: -0.4px;
+              margin: 0 0 12px;
+              .inbox {
+                width: 22px;
+                height: 22px;
+                background-color: white;
+              }
+              .checkbox2-1 {
+                color: black;
+                padding-left: 5px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+              .righttext {
+                font-size: 12px;
+                color: #35c5f0;
+                padding: 2px 2px 2px 2px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+            }
+            .checkbox3 {
+              width: 100%;
+              height: 22px;
+              font-size: 14px;
+              display: flex;
+              align-items: center;
+              letter-spacing: -0.4px;
+              margin: 0 0 12px;
+              .inbox {
+                width: 22px;
+                height: 22px;
+                background-color: white;
+              }
+              .checkbox3-1 {
+                color: black;
+                padding-left: 5px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+              .righttext {
+                font-size: 12px;
+                color: #35c5f0;
+                padding: 2px 2px 2px 2px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+            }
+            .checkbox4 {
+              line-height: 18px;
+              display: flex;
+              align-items: center;
+              letter-spacing: -1.4px;
+              margin: 0 0 12px;
+              .inbox {
+                position: relative;
+                width: 22px;
+                height: 22px;
+                background-color: white;
+              }
+              .sidebox4 {
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: -0.8px;
+                padding-left: 5px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+              .choice {
+                color: #757575;
+                font-size: 12px;
+                letter-spacing: -0.4px;
+                font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+                  "Malgun Gothic", sans-serif;
+              }
+            }
+          }
+        }
+      }
+      .bottom {
+        background-color: #35c5f0;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 26px 0;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        font-weight: 700;
+        font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+          "Malgun Gothic", sans-serif;
+      }
+    }
+    .already {
+      margin-top: 30px;
+
+      display: flex;
+      justify-content: center;
+      color: #424242;
+      font-size: 15px;
+      text-align: center;
+      letter-spacing: -0.4px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+        "Malgun Gothic", sans-serif;
+      .login {
+        padding-left: 10px;
+        color: black;
+        font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+          "Malgun Gothic", sans-serif;
+      }
+    }
+  }
+}
