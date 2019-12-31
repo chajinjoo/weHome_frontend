@@ -1,10 +1,22 @@
 .home_header {
     background-color: #FFFFFF;
-    height: 540px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    min-width: 1800px;
+   
+    .slide {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 540px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        // min-width: 1440px;
+        width: 100%;
+
+        .slide {
+            display: block;
+        }
+    }
 }
 
 .center_container {
