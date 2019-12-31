@@ -4,6 +4,7 @@ import login_logo from "../Images/login_logo.png";
 import fb from "../Images/facebook.png";
 import kakao from "../Images/kaka.png";
 import naver from "../Images/naver.png";
+import { API_URL, TOKEN } from "../Config/constants";
 
 class Login extends Component {
   constructor(props) {
@@ -61,7 +62,8 @@ class Login extends Component {
         "Content-Type": "application/json"
       }
     };
-    fetch("http://10.58.6.121:8000/user/auth", login_info)
+
+    fetch(`${API_URL}/user/auth`, login_info)
       .then(res => {
         return res.json();
       })
@@ -70,7 +72,7 @@ class Login extends Component {
         //json형식 {email: "chajanee@gmail.com", success: true}
         // if (json. === true) {
         // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
-        window.localStorage.setItem("access_token", token);
+        window.localStorage.setItem(TOKEN, token);
         //스테이트에 유저정보를 저장한다.
         // this.setState({
         //   email: '',

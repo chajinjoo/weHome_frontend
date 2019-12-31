@@ -47,7 +47,7 @@ class Nav extends Component {
                   alt="smile"
                 />
               </div>
-              <i class="fas fa-caret-down"></i>
+              <i className="fas fa-caret-down"></i>
             </button>
           </div>
         </div>
