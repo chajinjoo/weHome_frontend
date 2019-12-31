@@ -6,8 +6,8 @@ import Logo3 from "../Images/naver.png";
 import "./signup.scss";
 
 class Signup extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       nickname: "",
@@ -20,27 +20,67 @@ class Signup extends React.Component {
   }
 
   inputemail = e => {
-    console.dir(e.target);
-    console.log(e.preventDefault());
+    console.log(e.target.value);
+
     this.setState({
       email: e.target.value
     });
   };
-  password8 = e => {
+
+  handlePassword = e => {
+    console.log(e.target.value);
+    this.setState({
+      pw: e.target.value
+    });
+    console.log(this.state.pw);
     // if (e.target.value.length > 8) {
     //   alert("필수항목");
     // }
   };
 
-  nickname2 = e => {
+  handlePasswordCheck = e => {
     console.log(e.target.value);
-    // if (e.target.value.length < 1) {
-    //   alert("2자 이상 입력해주세요");
-    // }
+    this.setState({
+      re_pw: e.target.value
+    });
+  };
+
+  handleNickname = e => {
+    this.setState({
+      nicknameCheck: e.target.value
+    });
+  };
+  // if (e.target.value.length < 1) {
+  //   alert("2자 이상 입력해주세요");
+  // }
+
+  handleSignup = () => {
+    console.log(
+      `email:${this.state.email}, pw:${this.state.pw},${this.state.nicknameCheck}`
+    );
+    fetch("http://10.58.1.56:8000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.pw,
+        name: this.state.nicknameCheck
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res) {
+          console.log("ok");
+        } else {
+          console.log("no");
+        }
+      });
   };
 
   render() {
-    console.log(this.state.email);
+    // console.log(this.state.email);
     return (
       <div className="main">
         <img className="mainlogo" src={Logo} alt="로고"></img>
@@ -94,20 +134,23 @@ class Signup extends React.Component {
             </div>
 
             <div className="passwordwrap">
-              <div className="password"> 비밀번호</div>
+              <div className="passwordonly"> 비밀번호</div>
               <div className="passwordtext">
                 8자이상 영문 대 소문자,숫자,특수문자를 사용하세요.
               </div>
               <input
-                onChange={this.password8}
+                onChange={this.handlePassword}
                 type="password"
-                class="passwordtext"
-                className="input"
+                className="passwordtext input"
               ></input>
             </div>
             <div className="passwordresetwrap">
               <div className="passwordreset">비밀번호 확인 </div>
-              <input className="input"></input>
+              <input
+                onChange={this.handlePasswordCheck}
+                type="text"
+                className="input"
+              ></input>
             </div>
             <div className="nicknamewrap">
               <div className="nickname">별명</div>
@@ -116,7 +159,7 @@ class Signup extends React.Component {
               </div>
 
               <input
-                onChange={this.nickname2}
+                onChange={this.handleNickname}
                 type="text"
                 className="input"
               ></input>
@@ -162,7 +205,11 @@ class Signup extends React.Component {
                 </div>
               </div>
             </div>
-            <button className="bottom" type="submit">
+            <button
+              onClick={this.handleSignup}
+              className="bottom"
+              type="submit"
+            >
               회원가입하기
             </button>
           </div>
