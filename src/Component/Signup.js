@@ -20,8 +20,8 @@ class Signup extends React.Component {
   }
 
   inputemail = e => {
-    console.dir(e.target);
-    console.log(e.preventDefault());
+    console.log(e.target.value);
+
     this.setState({
       email: e.target.value
     });
@@ -29,6 +29,10 @@ class Signup extends React.Component {
 
   handlePassword = e => {
     console.log(e.target.value);
+    this.setState({
+      pw: e.target.value
+    });
+    console.log(this.state.pw);
     // if (e.target.value.length > 8) {
     //   alert("필수항목");
     // }
@@ -36,13 +40,43 @@ class Signup extends React.Component {
 
   handlePasswordCheck = e => {
     console.log(e.target.value);
+    this.setState({
+      re_pw: e.target.value
+    });
   };
 
   handleNickname = e => {
-    console.log(e.target.value);
-    // if (e.target.value.length < 1) {
-    //   alert("2자 이상 입력해주세요");
-    // }
+    this.setState({
+      nicknameCheck: e.target.value
+    });
+  };
+  // if (e.target.value.length < 1) {
+  //   alert("2자 이상 입력해주세요");
+  // }
+
+  handleSignup = () => {
+    console.log(
+      `email:${this.state.email}, pw:${this.state.pw},${this.state.nicknameCheck}`
+    );
+    fetch("http://10.58.1.56:8000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.pw,
+        name: this.state.nicknameCheck
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res) {
+          console.log("ok");
+        } else {
+          console.log("no");
+        }
+      });
   };
 
   render() {
@@ -171,7 +205,11 @@ class Signup extends React.Component {
                 </div>
               </div>
             </div>
-            <button className="bottom" type="submit">
+            <button
+              onClick={this.handleSignup}
+              className="bottom"
+              type="submit"
+            >
               회원가입하기
             </button>
           </div>
