@@ -115,7 +115,7 @@ class CommentsBox extends React.Component {
           <div className="comment_input_waraper">
             <div className="comment_input">
               <input
-                autocomplete="off"
+                autoComplete="off"
                 name="title"
                 placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
               ></input>

@@ -52,7 +52,7 @@ class ButtonBox extends React.Component {
       <>
         <div className="button_box">
           <button
-            className={isClicked ? "active" : ""}
+            className={isClicked ? "active" : "like_btn"}
             onClick={this.handleAddLikes}
           >
             <div

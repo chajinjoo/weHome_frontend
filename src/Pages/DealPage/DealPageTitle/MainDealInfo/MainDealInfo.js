@@ -39,7 +39,7 @@ class MainDealInfo extends React.Component {
     return (
       <div className="product_info">
         <div className="info_subtitle">
-          <a>{subtitle}</a>
+          <a href="/">{subtitle}</a>
         </div>
         <div className="info_maintitle">
           <span className="info_main_title">{maintitle}</span>
@@ -80,13 +80,13 @@ class MainDealInfo extends React.Component {
               <p className="one">
                 <del>{originPrice}원</del>
               </p>
-              <p className="two">
+              <div className="two">
                 {discountPrice}
                 <span>원</span>
                 <div>
                   <span>최저가</span>
                 </div>
-              </p>
+              </div>
             </div>
           </div>
           <div className="point">

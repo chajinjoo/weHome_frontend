@@ -53,40 +53,57 @@ class Login extends Component {
 
     //           localStorage.setItem('auth_token', res.access_token);
     //         })
-
-    const login_info = {
+    //진주님!!!!!!!!!!!!!진주님!!!!!!!!!!!!!!!!진주님!!!!!!!!!!!!!!!!!
+    // const login_info = {
+    //   method: "POST",
+    //   body: JSON.stringify(this.state),
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   }
+    // };
+    // fetch("http://10.58.0.41:8000/user/auth", login_info)
+    //   .then(res => {
+    //     return res.json();
+    //   })
+    //   .then(json => {
+    //     const token = json.access_token;
+    //json형식 {email: "chajanee@gmail.com", success: true}
+    // if (json. === true) {
+    // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
+    // window.localStorage.setItem("access_token", token);
+    //스테이트에 유저정보를 저장한다.
+    // this.setState({
+    //   email: '',
+    //   password: ''
+    // });
+    // this.props.history.push("/main");
+    // alert("로그인 성공");
+    // } else {
+    //   alert("이메일 혹은 비밀번호를 확인하세요");
+    // }
+    //     })
+    //     .catch(err => {
+    //       console.log(err.response);
+    //       alert("로그인실패");
+    //     });
+    fetch("http://10.58.0.41:8000/user/auth", {
       method: "POST",
-      body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json"
-      }
-    };
-    fetch("http://10.58.6.121:8000/user/auth", login_info)
-      .then(res => {
-        return res.json();
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password
       })
-      .then(json => {
-        const token = json.access_token;
-        //json형식 {email: "chajanee@gmail.com", success: true}
-        // if (json. === true) {
-        // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
-        window.localStorage.setItem("access_token", token);
-        //스테이트에 유저정보를 저장한다.
-        // this.setState({
-        //   email: '',
-        //   password: ''
-        // });
-        this.props.history.push("/main");
-        alert("로그인 성공");
-        // } else {
-        //   alert("이메일 혹은 비밀번호를 확인하세요");
-        // }
-      })
-      .catch(err => {
-        console.log(err.response);
-        alert("로그인실패");
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.access_token) {
+          localStorage.setItem("wtw-token", response.access_token);
+        }
       });
   };
+
   render() {
     return (
       <>
