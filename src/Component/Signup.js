@@ -6,8 +6,8 @@ import Logo3 from "../Images/naver.png";
 import "./signup.scss";
 
 class Signup extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       nickname: "",
@@ -26,13 +26,19 @@ class Signup extends React.Component {
       email: e.target.value
     });
   };
-  password8 = e => {
+
+  handlePassword = e => {
+    console.log(e.target.value);
     // if (e.target.value.length > 8) {
     //   alert("필수항목");
     // }
   };
 
-  nickname2 = e => {
+  handlePasswordCheck = e => {
+    console.log(e.target.value);
+  };
+
+  handleNickname = e => {
     console.log(e.target.value);
     // if (e.target.value.length < 1) {
     //   alert("2자 이상 입력해주세요");
@@ -40,7 +46,7 @@ class Signup extends React.Component {
   };
 
   render() {
-    console.log(this.state.email);
+    // console.log(this.state.email);
     return (
       <div className="main">
         <img className="mainlogo" src={Logo} alt="로고"></img>
@@ -94,20 +100,23 @@ class Signup extends React.Component {
             </div>
 
             <div className="passwordwrap">
-              <div className="password"> 비밀번호</div>
+              <div className="passwordonly"> 비밀번호</div>
               <div className="passwordtext">
                 8자이상 영문 대 소문자,숫자,특수문자를 사용하세요.
               </div>
               <input
-                onChange={this.password8}
+                onChange={this.handlePassword}
                 type="password"
-                class="passwordtext"
-                className="input"
+                className="passwordtext input"
               ></input>
             </div>
             <div className="passwordresetwrap">
               <div className="passwordreset">비밀번호 확인 </div>
-              <input className="input"></input>
+              <input
+                onChange={this.handlePasswordCheck}
+                type="text"
+                className="input"
+              ></input>
             </div>
             <div className="nicknamewrap">
               <div className="nickname">별명</div>
@@ -116,7 +125,7 @@ class Signup extends React.Component {
               </div>
 
               <input
-                onChange={this.nickname2}
+                onChange={this.handleNickname}
                 type="text"
                 className="input"
               ></input>
