@@ -31,6 +31,7 @@ class Login extends Component {
   handleSubmit = e => {
     console.log(`EMAIL:${this.state.email}\nPW:${this.state.password}`);
     e.preventDefault();
+
     const login_info = {
       method: "POST",
       body: JSON.stringify(this.state),

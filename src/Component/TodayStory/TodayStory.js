@@ -4,8 +4,24 @@ import StoryRight from "./StoryRight";
 import TodayStoryData from "./TodayStoryData";
 import "./TodayStory.scss";
 import { Link } from "react-router-dom";
+// import fetchAPI from "../../Utils/fetch";
 
 class TodayStory extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     TodayStoryData: []
+  //   };
+  // }
+
+  // componentDidMount() {
+  //   fetchAPI("http://10.58.1.56:8000/test_app/maintodaystory").then(res => {
+  //     this.setState({
+  //       TodayStoryData: res.result
+  //     });
+  //   });
+  // }
+
   render() {
     return (
       <section className="story_section">
@@ -16,7 +32,9 @@ class TodayStory extends Component {
             style={{ textDecoration: "none", color: "black" }}
           >
             <div className="storyleft_box">
-              {TodayStoryData.map(el => (
+              {TodayStoryData.map((
+                el //this.state.TodayStoryData.map
+              ) => (
                 <StoryLeft
                   key={el.num}
                   // data={el}
