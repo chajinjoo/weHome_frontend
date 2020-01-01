@@ -1,18 +1,18 @@
 .layout_footer {
     background-color: #FAFAFA;
-    min-width: 1800px;
-    height: 265px;
+    // min-width: 1136px;
+    height: 260px;
     display: flex;
+    width: 100%;
     justify-content: center;
     .layout_footer_content {
         margin-top: 40px;  
-        margin-right: 120px;  
+        width: 100%;
         .footer_top {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
             padding-bottom: 25px;
             .footer_cs {
-                margin-right: 550px;
                 .footer_cs1 {
                     font-size: 13px;
                     padding-bottom: 5px;
@@ -33,14 +33,15 @@
                     letter-spacing: 0.05px;
                 }
             }
+            .footer_outbound img{
+                width: 25px; 
+                padding: 10px;
+            }
         }
     }
 }
 
-.footer_outbound img{
-    width: 25px;
-    padding: 10px;
-}
+
 
 .footer_center {
     display: flex;
