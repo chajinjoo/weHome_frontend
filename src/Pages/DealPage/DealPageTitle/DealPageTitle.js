@@ -8,7 +8,7 @@ import DealProductNav from "./DealProductNav/DealProductNav";
 export default function DealPageTitle() {
   return (
     <div className="deal_roof">
-      <div>
+      <div className="deal_rooftop">
         <div className="deal_page_title">
           <div className="deal_page_category">
             <span className="deal_category">패브릭 > </span>

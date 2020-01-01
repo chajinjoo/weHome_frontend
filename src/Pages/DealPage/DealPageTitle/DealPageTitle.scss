@@ -1,57 +1,61 @@
 .deal_roof {
   height: auto;
 
-  .deal_page_title {
-    // border: 2px solid orange;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .deal_rooftop {
+    // border: 1px solid red;
 
-    .deal_page_category {
+    .deal_page_title {
+      // border: 2px solid orange;
+      display: flex;
+      justify-content: center;
       width: 100%;
-      max-width: 1150px;
-      margin: 20px;
-      // border: 1px solid red;
 
-      .deal_category {
-        font-size: 15px;
-        letter-spacing: -1px;
-        color: #9F9F9F;
-      }
+      .deal_page_category {
+        width: 100%;
+        max-width: 1150px;
+        margin: 20px;
+        // border: 1px solid red;
 
-      .deal_main_photo {
-        width: 1150px;
-        // width: 100%;
-        // border: 2px solid yellowgreen;
-        display: flex;
-        margin-top: 20px;
-
-        .deal_really_main_photo {
-          width: 632.5px;
-          height: 647px;
-          display: flex;
-          // border: 1px solid blue;
+        .deal_category {
+          font-size: 15px;
+          letter-spacing: -1px;
+          color: #9F9F9F;
         }
 
-        .deal_main_info {
-          width: 517.5px;
-          height: auto;
+        .deal_main_photo {
+          width: 1150px;
+          // width: 100%;
+          // border: 2px solid yellowgreen;
+          display: flex;
+          margin-top: 20px;
+
+          .deal_really_main_photo {
+            width: 632.5px;
+            height: 647px;
+            display: flex;
+            // border: 1px solid blue;
+          }
+
+          .deal_main_info {
+            width: 517.5px;
+            height: auto;
+          }
         }
       }
     }
-  }
 
-  .deal_product_navgation {
-    width: 100%;
-    height: 52px;
-    border-top: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
-    background-color: #fafafa;
-    position: sticky;
-    top: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .deal_product_navgation {
+      width: 100%;
+      height: 52px;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      background-color: #fafafa;
+      position: sticky;
+      top: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+    }
   }
 }

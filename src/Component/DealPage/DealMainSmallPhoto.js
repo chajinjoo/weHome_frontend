@@ -7,7 +7,7 @@ export default function DealMainSmallPhoto(props) {
       style={{
         backgroundImage: `url(${props.smallPhoto})`
       }}
-      onMouseOver={() => props.handleHover()}
+      onMouseOver={props.handleHover}
     ></div>
   );
 }
