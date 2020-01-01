@@ -2,6 +2,7 @@ import React from "react";
 import "./MainDealSelect.scss";
 import fetchAPI from "../../../../Utils/fetch";
 import DealSelector from "../../../../Component/DealPage/DealSelectOption/DealSelector";
+import DealCart from "./DealCart/DealCart";
 
 class MainDealSelect extends React.Component {
   constructor(props) {
@@ -94,10 +95,7 @@ class MainDealSelect extends React.Component {
           <p>주문금액</p>
           <p>{maxPrice}원</p>
         </div>
-        <div className="select_buy">
-          <button className="maybe_buy">장바구니</button>
-          <button>바로구매</button>
-        </div>
+        <DealCart />
       </div>
     );
   }
