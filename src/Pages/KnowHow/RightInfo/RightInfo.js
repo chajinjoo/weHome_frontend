@@ -25,7 +25,7 @@ class RightInfo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="qwer">
         <div className="right_info">
           <RightMainBox
             title={this.state.infoMessage.title}
