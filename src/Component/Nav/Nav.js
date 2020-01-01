@@ -53,7 +53,7 @@ class Nav extends Component {
         </div>
 
         <div className="category">
-          <div>
+          <div className="category_left">
             <ul className="category_lists">
               <li className="category_list">홈</li>
               <li className="category_list">사진</li>

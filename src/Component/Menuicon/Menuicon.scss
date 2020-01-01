@@ -1,14 +1,13 @@
 .menuicon_container {
-    min-width: 1440px;
     background-color: #FFFFFF;
     height: 170px;
+    width: 100%;
 }
 
 .menuicon_lists {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-right: 120px;
     cursor: pointer;
 }
 

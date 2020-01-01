@@ -4,22 +4,26 @@
     align-items: center;
     height: 80px;
     background-color: #FFFFFF;
-    min-width: 1440px;
     position: sticky; 
     top: 0; 
     z-index: 100;
-}
+    width: 1136px;
+    margin: 0 auto;
+    justify-content: space-between;
 
+}
 
 .nav_left {
     display: flex;
     align-items: center;
+    // width: ;
+    
     .home_logo {
         width: 88px;
-        margin-left: 260px;
+        // margin-right: 0px;
         margin-top: 10px;
-        padding-right: 35px;
         cursor: pointer;
+        padding-right: 17px;
     }
 }
 
@@ -27,6 +31,7 @@
     margin-top: 12px;
     display: flex;
     list-style: none;
+    
 }
 
 .nav_list {
@@ -35,6 +40,7 @@
     color: #4A4A4A;
     padding: 15px;
     cursor: pointer;
+    
 }
 
 .nav_list:hover {
@@ -137,39 +143,45 @@
     height: 50px;
     background-color: #FFFFFF;
     border-bottom: 1px solid #EDEDED;
-    min-width: 1440px;
-}
+    width: 1136px;
+    margin: 0 auto;
+    justify-content: space-between;
 
-.category_lists {
-    display: flex;
-    list-style: none;
-    margin-left: 255px;
-}
+    .cetegory_left {
 
-.category_list {
-    font-size: 15px;
-    font-weight: bold;
-    color: #4A4A4A;
-    padding: 12px;
-    cursor: pointer;
-}
+        .category_lists {
+            list-style: none;
 
-.category_list:hover {
-    color: #35C5F0;
-    transition: all .3s;
-}
+            }
+        }
+    }
 
-.category_right {
-    display: flex;
-    align-items: center;
-}
+    .category_right {
+        display: flex;
+        align-items: center;
 
-.house_logo {
-    width: 22px;
-    margin-left: 480px;
-    padding: 5px;
-    cursor: pointer;
-}
+        .house_logo {
+            width: 22px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+
+    .category_list {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bold;
+        color: #4A4A4A;
+        padding: 12px;
+        cursor: pointer;
+        &:hover{
+            color: #35C5F0;
+            transition: all .3s;
+        }
+    }
+
+
+
 
 .download {
     font-weight: bold;
