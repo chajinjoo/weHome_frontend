@@ -2,22 +2,28 @@
     background-color: #FFFFFF;
     height: 170px;
     width: 100%;
+
+    .menuicon_lists {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        cursor: pointer;
+
+        .menuicon_img {
+            width: 140px;
+            margin-top: 20px;
+        }
+
+        .munuicon_txt {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+    }
 }
 
-.menuicon_lists {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    cursor: pointer;
-}
-
-.menuicon_img {
-    width: 140px;
-    margin-top: 20px;
-}
-
-.munuicon_txt {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
+@media screen and (max-width: 768px) {
+    .menuicon_img {
+        width: 70%;
+    }
 }
