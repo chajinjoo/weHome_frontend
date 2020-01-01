@@ -4,7 +4,7 @@ function DealSelector(props) {
   const { data } = props;
 
   const options = data.optionList.map((el, index) => (
-    <option key={el.id}>
+    <option value={el.Name} key={el.id}>
       0{el.id}.{el.Name}({el.price}원)
     </option>
   ));

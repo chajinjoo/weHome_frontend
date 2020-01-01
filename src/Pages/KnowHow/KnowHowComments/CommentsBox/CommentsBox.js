@@ -47,20 +47,18 @@ class CommentsBox extends React.Component {
   }
 
   onSubmit = e => {
-    const { userProfile, userId, userTime } = this.state.loginUser;
-    const { Usercomment } = this.state;
     e.preventDefault();
     this.commentId += 1;
     let UserComments = [
       {
         id: this.commentId,
-        userPhoto: userProfile,
-        userId: userId,
-        time: userTime,
+        userPhoto: this.state.loginUser.userProfile,
+        userId: this.state.loginUser.userId,
+        time: this.state.loginUser.userTime,
         contents_text: e.target.title.value
       }
     ];
-    let addComment = UserComments.concat(Usercomment);
+    let addComment = UserComments.concat(this.state.Usercomment);
     this.setState({
       Usercomment: addComment
     });
@@ -69,9 +67,7 @@ class CommentsBox extends React.Component {
   };
 
   handleRemove = a => {
-    const { Usercomment } = this.state;
-
-    const Arr = Usercomment;
+    const Arr = this.state.Usercomment;
     const newArr = Arr.filter(el => Arr.indexOf(el) !== a);
     console.log(a);
     console.log(newArr);
@@ -115,7 +111,7 @@ class CommentsBox extends React.Component {
           <div className="comment_input_waraper">
             <div className="comment_input">
               <input
-                autoComplete="off"
+                autocomplete="off"
                 name="title"
                 placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
               ></input>

@@ -5,8 +5,8 @@
     height: 80px;
     background-color: #FFFFFF;
     min-width: 1440px;
-    position: sticky; 
-    top: 0; 
+    position: sticky;
+    top: 0;
     z-index: 100;
 }
 
@@ -14,6 +14,7 @@
 .nav_left {
     display: flex;
     align-items: center;
+
     .home_logo {
         width: 88px;
         margin-left: 260px;
@@ -46,6 +47,7 @@
     display: flex;
     align-items: center;
     margin-left: 220px;
+
     .search {
         height: 35px;
         width: 230px;
@@ -189,6 +191,7 @@
     text-align: center;
     color: #757575;
     cursor: pointer;
+
     .nav_icon_box {
         display: flex;
         align-items: center;
@@ -197,12 +200,14 @@
         height: 36px;
         border-radius: 50%;
         margin: 2px;
-        &:hover{
+
+        &:hover {
             background-color: #34C5F0;
             color: white;
         }
+
         .fa-bookmark .fa-bell .fa-shopping-cart {
-            height:24px;
+            height: 24px;
             width: 24px;
             border-color: #34C5F0;
             color: rgb(29, 185, 233);
@@ -223,7 +228,8 @@
     border: 0;
     outline: none;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #34C5F0;
     }
 }

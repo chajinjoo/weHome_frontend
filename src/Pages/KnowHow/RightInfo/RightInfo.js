@@ -18,7 +18,7 @@ class RightInfo extends React.Component {
         data: res
       });
     });
-    console.log(this.state.data);
+    // console.log(this.state.data);
   }
 
   render() {

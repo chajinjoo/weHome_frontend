@@ -31,30 +31,6 @@ class Login extends Component {
   handleSubmit = e => {
     console.log(`EMAIL:${this.state.email}\nPW:${this.state.password}`);
     e.preventDefault();
-
-    // button.addEventListener('click', () => {
-    //   if (userId.value, userPassword.value) {
-    //     a = true;
-    //   }
-
-    //     console.log(userId.value)
-    //     console.log(userPassword.value)
-
-    //     fetch('http://10.58.1.247:8000/user/auth', {
-    //       method: 'POST',
-    //       body: JSON.stringify({
-    //         email: userId.value,
-    //         password: userPassword.value
-    //       })
-
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //           alert(res.access_token)
-
-    //           localStorage.setItem('auth_token', res.access_token);
-    //         })
-    //진주님!!!!!!!!!!!!!진주님!!!!!!!!!!!!!!!!진주님!!!!!!!!!!!!!!!!!
     const login_info = {
       method: "POST",
       body: JSON.stringify(this.state),

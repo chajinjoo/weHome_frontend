@@ -14,7 +14,7 @@ class Information extends React.Component {
 
   componentDidMount = () => {
     fetchAPI("http://localhost:3000/data/information.json").then(data => {
-      console.log(data);
+      // console.log(data);
       this.setState({
         information: data
       });
