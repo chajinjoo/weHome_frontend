@@ -1,5 +1,5 @@
 .deal_roof {
-  position: relative;
+  position: static;
 
   .deal_rooftop {
     // border: 1px solid red;
@@ -46,17 +46,23 @@
 
   }
 
-  .deal_product_navgation {
-    width: 100%;
-    height: 52px;
-    border-top: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
-    background-color: #fafafa;
-    // position: sticky;
-    // top: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .qwe {
 
+
+    .deal_product_navgation {
+      width: 100%;
+      height: 52px;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      background-color: #fafafa;
+      position: sticky;
+      top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+
+    }
   }
+
 }

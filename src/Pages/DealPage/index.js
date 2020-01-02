@@ -8,7 +8,6 @@ export default function DealPage() {
     <>
       <Nav />
       <DealPageTitle />
-      <DealMainPage />
     </>
   );
 }

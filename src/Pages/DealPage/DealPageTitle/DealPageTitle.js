@@ -4,6 +4,8 @@ import MainDealPhoto from "./MainDealPhoto/MainDealPhoto";
 import MainDealInfo from "./MainDealInfo/MainDealInfo";
 import MainDealSelect from "./MainDealSelect/MainDealSelect";
 import DealProductNav from "./DealProductNav/DealProductNav";
+import DealDetetailPage from "../DealMainPage/DealDetailPage/DealDetailPage";
+import DealMainPage from "../DealMainPage/DealMainPage";
 
 export default function DealPageTitle() {
   return (
@@ -29,8 +31,11 @@ export default function DealPageTitle() {
           </div>
         </div>
       </div>
-      <div className="deal_product_navgation">
-        <DealProductNav />
+      <div className="qwe">
+        <div className="deal_product_navgation">
+          <DealProductNav />
+        </div>
+        <DealMainPage />
       </div>
     </div>
   );
