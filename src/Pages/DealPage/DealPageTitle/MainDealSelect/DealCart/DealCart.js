@@ -23,10 +23,11 @@ class DealCart extends React.Component {
   };
 
   render() {
+    const { select_buy, maybe_buy } = this.props;
     return (
       <>
-        <div className="select_buy">
-          <button className="maybe_buy" onClick={this.handleModal}>
+        <div className={select_buy}>
+          <button className={maybe_buy} onClick={this.handleModal}>
             장바구니
           </button>
           <button>바로구매</button>

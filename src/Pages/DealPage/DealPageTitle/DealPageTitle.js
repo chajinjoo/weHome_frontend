@@ -20,14 +20,17 @@ export default function DealPageTitle() {
               </div>
               <div className="deal_main_info">
                 <MainDealInfo />
-                <MainDealSelect />
+                <MainDealSelect
+                  info_select="info_select"
+                  select_confirm="select_confirm"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="deal_product_navgation">
-          <DealProductNav />
-        </div>
+      </div>
+      <div className="deal_product_navgation">
+        <DealProductNav />
       </div>
     </div>
   );

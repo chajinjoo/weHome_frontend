@@ -1,0 +1,124 @@
+.info_sub_select {
+  width: 100%;
+  height: 100%;
+  // border: 1px solid blue;
+  // margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 180px;
+
+  div {
+    // border: 2px solid aqua;
+
+    .info_box {
+      width: 100%;
+      height: 40px;
+      margin-top: 15px;
+      border-radius: 5px;
+      outline: none;
+
+    }
+  }
+
+  .user_select_box {
+    // border: 1px solid black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+
+    .user_select {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+
+      p {
+        font-size: 15px;
+        color: #424242;
+        font-weight: 900;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-weight: 900;
+        color: #424242;
+        font-size: 15px;
+      }
+    }
+
+    .user_select_numbox {
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px;
+
+      .user_select_num {
+        width: 80px;
+      }
+    }
+  }
+
+  .select_sub_confirm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    p:first-child {
+      font-size: 13px;
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+
+  .select_buy {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 48%;
+      height: 50px;
+      margin: 0 0 3px 3px;
+      background-color: #34C5F0;
+      color: #ffffff;
+      border: 1px solid #34C5F0;
+      border-radius: 5px;
+      font-size: 17px;
+      font-weight: 800;
+      outline: none;
+
+      &.maybe_buy {
+        background-color: #ffffff;
+        color: #34C5F0;
+        border: 1px solid #34C5F0;
+      }
+    }
+  }
+
+  // .falseClick {
+  //   width: 100%;
+  //   height: 40px;
+  //   margin-top: 15px;
+  //   border-radius: 5px;
+
+  //   outline: none;
+  //   outline-color: #34C5F0;
+  //   outline-style: solid;
+  //   outline-width: 2px;
+  //   box-shadow: 0 0 3px 3px #34C5F0;
+  // }
+}

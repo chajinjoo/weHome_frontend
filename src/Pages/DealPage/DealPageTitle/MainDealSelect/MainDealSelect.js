@@ -3,6 +3,7 @@ import "./MainDealSelect.scss";
 import fetchAPI from "../../../../Utils/fetch";
 import DealSelector from "../../../../Component/DealPage/DealSelectOption/DealSelector";
 import DealCart from "./DealCart/DealCart";
+import DealMaxPrice from "../../DealMainPage/DealSubSelect/DealMaxPrice";
 
 class MainDealSelect extends React.Component {
   constructor(props) {
@@ -57,8 +58,8 @@ class MainDealSelect extends React.Component {
 
   render() {
     if (!this.state.selectProduct) return <></>;
-    console.log(this.state.productPrice);
-    console.log(this.state.colorSelcet);
+    // console.log(this.state.productPrice);
+    // console.log(this.state.colorSelcet);
     let maxPrice = 0;
     for (let i = 0; i < this.state.productPrice.length; i++) {
       maxPrice += parseFloat(this.state.productPrice[i]);
@@ -76,7 +77,7 @@ class MainDealSelect extends React.Component {
         </div>
         <div className="user_select_numbox">
           {/* <select className="user_select_num">{options}</select> */}
-          <p>{parseFloat(el.price * 4)}원</p>
+          <p>{parseFloat(el.price)}원</p>
         </div>
       </div>
     ));
@@ -87,15 +88,15 @@ class MainDealSelect extends React.Component {
       </select>
     ));
     // console.log(this.state.selectProduct[0]);
+    const { info_select } = this.props;
     return (
-      <div className="info_select">
+      <div className={info_select}>
         <div>{selects}</div>
         {selector}
-        <div className="select_confirm">
-          <p>주문금액</p>
-          <p>{maxPrice}원</p>
+        <div>
+          <DealMaxPrice maxprice={maxPrice} select_confirm="select_confirm" />
+          <DealCart select_buy="select_buy" maybe_buy="maybe_buy" />
         </div>
-        <DealCart />
       </div>
     );
   }
