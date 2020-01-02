@@ -1,0 +1,27 @@
+{
+  "main_img": [{
+      "id": "1",
+      "url": "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-admins-productions-notice-157780464062260685.png/2560/none"
+    },
+    {
+      "id": "2",
+      "url": "https://exit.ohou.se/e5dc923701e86816720a72ded4e4fa678b1a88cc/maatila.img18.kr/product_uproad/all/14intro.jpg"
+    },
+    {
+      "id": "3",
+      "url": "https://exit.ohou.se/57fd7be48fb2e05066877cf203492a6f9ad1886f/maatila.img18.kr/product_uproad/bedding/19bd221-225_de0.jpg"
+    },
+    {
+      "id": "4",
+      "url": "https://exit.ohou.se/9e7358d2ab8d26b1358712d603b0dbbcc5b3ec60/maatila.img18.kr/product_uproad/bedding/19bd148_de1_01.jpg"
+    },
+    {
+      "id": "5",
+      "url": "https://exit.ohou.se/8e03ad5d308cae00a1218849c6fbd8ec371a555a/maatila.img18.kr/product_uproad/bedding/19bd221_de2_02.jpg"
+    },
+    {
+      "id": "6",
+      "url": "https://exit.ohou.se/cbb8fc4bb8d95fa38ee8851be2b6d14c0bfd60b4/maatila.img18.kr/product_uproad/bedding/19bd224_de2_04.jpg"
+    }
+  ]
+}

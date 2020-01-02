@@ -10,7 +10,7 @@
     align-items: center;
     width: 140px;
     height: 42px;
-    background-color: #FAFAFA;
+    background-color: #ffffff;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
     outline: none;
@@ -19,6 +19,8 @@
     &:active {
       transform: translateY(1px);
     }
+
+
 
     .heart_box {
       width: 30px;

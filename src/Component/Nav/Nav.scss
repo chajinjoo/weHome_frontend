@@ -5,12 +5,13 @@
     height: 80px;
     background-color: #FFFFFF;
     // position: relative; 
-    position: sticky; 
-    top: 0; 
+    position: sticky;
+    top: 0;
     z-index: 100;
     width: 100%;
     margin: 0 auto;
     justify-content: space-between;
+
 
     .nav_body {
         display: flex;
@@ -40,6 +41,7 @@
                     color: #4A4A4A;
                     padding: 15px;
                     cursor: pointer;
+
                     &:hover {
                         color: #35C5F0;
                         transition: all .3s;
@@ -63,6 +65,8 @@
 .nav_center {
     display: flex;
     align-items: center;
+    margin-left: 220px;
+
     .search {
         height: 35px;
         width: 230px;
@@ -74,13 +78,14 @@
         border: 0.5px solid #DBDBDB;
         background-color: #FFFFFF;
     }
+
     .fa-search {
         font-size: 20px;
         position: absolute;
         margin-left: 12px;
         color: rgb(151, 151, 151);
     }
-    
+
     .search::placeholder {
         color: rgb(209, 207, 207);
     }
@@ -96,6 +101,7 @@
     color: rgb(29, 185, 233);
     outline: none;
     cursor: pointer;
+
     &:hover {
         background-color: #34C5F0;
         color: white;
@@ -107,6 +113,7 @@
     color: #8f8d8d;
     font-size: 15.5px;
     cursor: pointer;
+
     &:hover {
         color: #35C5F0;
         transition: all .3s;
@@ -138,37 +145,39 @@
 
             .category_lists {
                 list-style: none;
-                }
             }
+        }
     }
 }
 
-.nav_right_container{
+.nav_right_container {
     display: flex;
 }
-    .category_right {
-        display: flex;
-        align-items: center;
 
-        .house_logo {
-            width: 22px;
-            padding: 5px;
-            cursor: pointer;
-        }
-    }
+.category_right {
+    display: flex;
+    align-items: center;
 
-    .category_list {
-        display: inline-block;
-        font-size: 15px;
-        font-weight: bold;
-        color: #4A4A4A;
-        padding: 12px;
+    .house_logo {
+        width: 22px;
+        padding: 5px;
         cursor: pointer;
-        &:hover{
-            color: #35C5F0;
-            transition: all .3s;
-        }
     }
+}
+
+.category_list {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4A4A4A;
+    padding: 12px;
+    cursor: pointer;
+
+    &:hover {
+        color: #35C5F0;
+        transition: all .3s;
+    }
+}
 
 .category_list1 {
     display: inline-block;
@@ -185,6 +194,7 @@
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+
     &:hover {
         color: #35C5F0;
         transition: all .3s;
@@ -198,6 +208,7 @@
     align-items: center;
     color: #757575;
     cursor: pointer;
+
     .nav_icon_box {
         display: flex;
         align-items: center;
@@ -206,12 +217,14 @@
         height: 36px;
         border-radius: 50%;
         margin: 2px;
-        &:hover{
+
+        &:hover {
             background-color: #34C5F0;
             color: white;
         }
+
         .fa-bookmark .fa-bell .fa-shopping-cart {
-            height:24px;
+            height: 24px;
             width: 24px;
             border-color: #34C5F0;
             color: rgb(29, 185, 233);
@@ -232,7 +245,8 @@
     border: 0;
     outline: none;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #34C5F0;
     }
 }
@@ -245,15 +259,19 @@
     .nav {
         height: 60px;
     }
+
     .nav_left_btns {
         display: none;
     }
+
     .nav_center {
         display: none;
     }
+
     .nav_right_icon_box {
         display: none;
     }
+
     .category_right {
         display: none;
     }
@@ -261,22 +279,25 @@
     #nav_main_logo {
         width: 70px;
         position: absolute;
-        left: 50%; 
-        transform:translateX(-50%);
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 15%;
     }
+
     .nav_icon_btn {
         margin-right: 15px;
     }
+
     .category_list {
         font-size: 14px;
     }
-    .category{
-     .category_body {
-        justify-content: center;
-        width: 100%;
+
+    .category {
+        .category_body {
+            justify-content: center;
+            width: 100%;
+        }
     }
-}
 }
 
 @media screen and (max-width: 1020px) {

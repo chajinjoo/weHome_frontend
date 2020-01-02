@@ -39,16 +39,13 @@ class Login extends Component {
       },
       body: JSON.stringify(this.state)
     };
-
     fetch(`${API_URL}/user/auth`, login_info)
       .then(res => {
         return res.json();
       })
       .then(json => {
         const token = json.access_token;
-        //json형식 {email: "chajanee@gmail.com", success: true}
-        // if (json. === true) {
-        // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
+
         window.localStorage.setItem(TOKEN, token);
         //스테이트에 유저정보를 저장한다.
         // this.setState({
@@ -56,16 +53,15 @@ class Login extends Component {
         //   password: ''
         // });
         this.props.history.push("/");
+
         alert("로그인 성공");
-        // } else {
-        //   alert("이메일 혹은 비밀번호를 확인하세요");
-        // }
       })
       .catch(err => {
         console.log(err.response);
         alert("로그인실패");
       });
   };
+
   render() {
     return (
       <>

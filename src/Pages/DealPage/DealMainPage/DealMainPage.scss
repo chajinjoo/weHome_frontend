@@ -1,0 +1,15 @@
+.detail_roof {
+  // border: 2px solid orange;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  // height: 1000px;
+
+  .detail_container_box {
+    // border: 2px solid red;
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    position: relative;
+  }
+}
