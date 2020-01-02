@@ -11,12 +11,7 @@ const info = [
 ];
 function DealProductNav() {
   const Navs = info.map((nav, index) => <ProductNav key={index} info={nav} />);
-  return (
-    <>
-      <div className="lier_box"></div>
-      {Navs}
-    </>
-  );
+  return <>{Navs}</>;
 }
 
 export default DealProductNav;
