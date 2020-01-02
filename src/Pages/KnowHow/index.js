@@ -9,6 +9,7 @@ class KnowHow extends React.Component {
     return (
       <>
         <Nav />
+
         <div className="knowHowPage">
           <main className="contents">
             <KnowHowMainFeed />
