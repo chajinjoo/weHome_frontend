@@ -38,7 +38,7 @@ class RightInfo extends React.Component {
     } = this.state.data.data.otherPeople;
 
     return (
-      <div>
+      <div className="qwer">
         <div className="right_info">
           <RightMainBox
             title={title}

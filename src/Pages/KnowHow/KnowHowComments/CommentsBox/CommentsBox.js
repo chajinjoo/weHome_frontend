@@ -4,6 +4,7 @@ import UserImg from "../../../../Images/userCommentImg.png";
 import Rightarrow from "../../../../Images/Rightarrow.png";
 import UserComment from "../UserComment";
 import CommentCount from "../CommentCount/CommentCount";
+import fetchAPI from "../../../../Utils/fetch";
 
 class CommentsBox extends React.Component {
   constructor(props) {
@@ -11,76 +12,138 @@ class CommentsBox extends React.Component {
     this.commentId = 2;
     this.state = {
       currentPage: 1,
-      Usercomment: [
-        {
-          id: 0,
-          userPhoto:
-            "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
-          userId: "jotang",
-          time: 2,
-          contents_text: "댓글을 한번 달아보겠습니다."
-        },
-        {
-          id: 1,
-          userPhoto:
-            "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
-          userId: "jotang",
-          time: 2,
-          contents_text: "댓글이 잘 달릴까요?"
-        },
-        {
-          id: 2,
-          userPhoto:
-            "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
-          userId: "jotang",
-          time: 2,
-          contents_text: "자 도전 시작!"
-        }
-      ],
-      loginUser: {
-        userId: "wecode",
-        userProfile:
-          "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
-        userTime: 4
-      }
+      Usercomment: []
+
+      // Usercomment: [
+      //   {
+      //     id: 0,
+      //     userPhoto:
+      //       "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+      //     userId: "jotang",
+      //     time: 2,
+      //     contents_text: "댓글을 한번 달아보겠습니다."
+      //   },
+      //   {
+      //     id: 1,
+      //     userPhoto:
+      //       "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+      //     userId: "jotang",
+      //     time: 2,
+      //     contents_text: "댓글이 잘 달릴까요?"
+      //   },
+      //   {
+      //     id: 2,
+      //     userPhoto:
+      //       "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+      //     userId: "jotang",
+      //     time: 2,
+      //     contents_text: "자 도전 시작!"
+      //   }
+      // ],
+      // loginUser: {
+      //   userId: "wecode",
+      //   userProfile:
+      //     "https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-users-profile_images-1555840371_Hpoz.jpeg/36/none",
+      //   userTime: 4
+      // }
     };
   }
 
-  onSubmit = e => {
-    e.preventDefault();
-    this.commentId += 1;
-    let UserComments = [
-      {
-        id: this.commentId,
-        userPhoto: this.state.loginUser.userProfile,
-        userId: this.state.loginUser.userId,
-        time: this.state.loginUser.userTime,
-        contents_text: e.target.title.value
-      }
-    ];
-    let addComment = UserComments.concat(this.state.Usercomment);
-    this.setState({
-      Usercomment: addComment
-    });
+  // handleSeongjin = () => {
+  //   fetchAPI("http://10.58.3.101:8000/test_app/comments")
+  //     .then(res => console.log(res))
+  //     .then(res => {
+  //       this.setState({
+  //         Usercomment: res.result
+  //       });
+  //     });
+  // };
+  handleComments = () => {
+    fetchAPI("http://10.58.5.97:8000/test_app/comments").then(res =>
+      this.setState({
+        Usercomment: res.result
+      })
+    );
+  };
 
-    e.target.title.value = "";
+  componentDidMount() {
+    this.handleComments();
+    // this.handleSeongjin();
+  }
+
+  onSubmit = e => {
+    // const { userProfile, userId, userTime } = this.state.loginUser;
+    // const { Usercomment } = this.state;
+    // let token = localStorage.getItem("access_token") || "";
+    e.preventDefault();
+    fetch("http://10.58.5.97:8000/test_app/comments ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        contents_text: e.target.title.value
+      })
+    })
+      .then(res => res.json())
+      // .then(res => console.log(res))
+      .then((e.target.title.value = ""))
+      .then(res =>
+        this.setState({
+          Usercomment: res.result
+        })
+      );
+
+    // this.commentId += 1;
+    // let UserComments = [
+    //   {
+    //     id: this.commentId,
+    //     userPhoto: userProfile,
+    //     userId: userId,
+    //     time: userTime,
+    //     contents_text: e.target.title.value
+    //   }
+    // ];
+    // let addComment = UserComments.concat(Usercomment);
+    // this.setState({
+    //   Usercomment: addComment
+    // });
   };
 
   handleRemove = a => {
-    const Arr = this.state.Usercomment;
-    const newArr = Arr.filter(el => Arr.indexOf(el) !== a);
-    console.log(a);
-    console.log(newArr);
-    this.setState({
-      Usercomment: newArr
-    });
+    const { Usercomment } = this.state;
+
+    const Arr = Usercomment;
+    const newArr = Arr.filter(el => Arr.indexOf(el) === a);
+    console.log("삭제", newArr);
+    fetch("http://10.58.5.97:8000/test_app/erasecomments ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        result: newArr
+      })
+    })
+      .then(res => res.json())
+      .then(
+        res =>
+          this.setState({
+            Usercomment: res.result
+          })
+        // console.log(a);
+        // console.log(newArr);
+        // this.setState({
+        //   Usercomment: newArr
+        // });
+      );
   };
 
   paginate = pageNum => {
     this.setState({
       currentPage: pageNum
     });
-    console.log(pageNum);
+    // console.log(pageNum);
   };
 
   render() {
@@ -96,7 +159,8 @@ class CommentsBox extends React.Component {
         handleRemove={() => this.handleRemove(index)}
       />
     ));
-
+    const a = this.state.Usercomment;
+    console.log(a);
     return (
       <>
         <div className="comment_title">
@@ -111,7 +175,7 @@ class CommentsBox extends React.Component {
           <div className="comment_input_waraper">
             <div className="comment_input">
               <input
-                autocomplete="off"
+                autoComplete="off"
                 name="title"
                 placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
               ></input>
