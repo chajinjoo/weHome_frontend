@@ -11,7 +11,7 @@ class KnowHow extends React.Component {
         <Nav />
 
         <div className="knowHowPage">
-          <main className="contents">
+          <main className="knowhow_contents">
             <KnowHowMainFeed />
             <RightInfo />
           </main>

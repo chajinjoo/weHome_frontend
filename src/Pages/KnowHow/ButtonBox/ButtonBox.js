@@ -1,5 +1,6 @@
 import React from "react";
 import "./ButtonBox.scss";
+import fetchAPI from "../../../Utils/fetch";
 
 class ButtonBox extends React.Component {
   constructor(props) {
@@ -11,6 +12,19 @@ class ButtonBox extends React.Component {
       isScraped: false,
       top: -80
     };
+  }
+
+  handleComments = () => {
+    fetchAPI("http://10.58.5.97:8000/test_app/housewarmingblog").then(res =>
+      this.setState({
+        likesNum: parseInt(res.result.likeit_num),
+        scrapNum: parseInt(res.result.scrap_num)
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.handleComments();
   }
 
   handleAddLikes = () => {
