@@ -16,11 +16,12 @@ class KnowHowMainFeed extends React.Component {
   }
 
   render() {
+    const { mainImg } = this.state;
     return (
       <section className="main_contents">
         <div
           className="main"
-          style={{ backgroundImage: `url(${this.state.mainImg.url})` }}
+          style={{ backgroundImage: `url(${mainImg.url})` }}
         ></div>
         <Information />
         <UsersContents />

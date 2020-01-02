@@ -1,11 +1,11 @@
 import React from "react";
 import LinkImg from "../../../../Images/linkIcon.png";
 
-function LinkedIcon(props) {
+function LinkedIcon({ shareBox }) {
   return (
     <a
-      href={props.shareBox.url}
-      className={props.shareBox.class}
+      href={shareBox.url}
+      className={shareBox.class}
       style={{
         backgroundImage: `url(${LinkImg})`
       }}
