@@ -1,0 +1,79 @@
+{
+  "dealMainSmallPhoto": [{
+      "id": "0",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-157286344946762517.jpg/72/72"
+    },
+    {
+      "id": "1",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286346481009559.jpg/72/72"
+
+    },
+    {
+      "id": "2",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286346848542026.jpg/72/72"
+    },
+    {
+      "id": "3",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347213725944.jpg/72/72"
+    },
+    {
+      "id": "4",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347569748345.jpg/72/72"
+    },
+    {
+      "id": "5",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347974045661.jpg/72/72"
+    },
+    {
+      "id": "6",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286348261301975.jpg/72/72"
+    },
+    {
+      "id": "7",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286348497778443.jpg/72/72"
+    }
+  ],
+  "dealMainBigPhoto": [{
+      "id": "0",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-157286344946762517.jpg/480/480"
+    },
+    {
+      "id": "1",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286346481009559.jpg/480/480"
+    },
+    {
+      "id": "2",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286346848542026.jpg/480/480"
+    },
+    {
+      "id": "3",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347213725944.jpg/480/480"
+    },
+    {
+      "id": "4",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347569748345.jpg/480/480"
+    },
+    {
+      "id": "5",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286347974045661.jpg/480/480"
+    },
+    {
+      "id": "6",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286348261301975.jpg/480/480"
+    },
+    {
+      "id": "7",
+      "url": "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-productions-images-157286348497778443.jpg/480/480"
+    }
+  ],
+  "dealInfo": {
+    "subtitle": "마틸다",
+    "maintitle": "[오늘의딜] BEST 무브 소프트 세미 극세사 차렵이불(단품/세트) 6종",
+    "reviewNum": "4,344",
+    "bookmarkNum": "34,655",
+    "shareNum": "6,802",
+    "discount": "42",
+    "originPrice": "57,000",
+    "discountPrice": "32,900"
+  }
+}

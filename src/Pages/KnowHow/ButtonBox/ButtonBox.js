@@ -21,6 +21,7 @@ class ButtonBox extends React.Component {
       likesNum: likesNum + offSet,
       isClicked: !isClicked
     });
+    console.log(this.state.isClicked);
   };
 
   showNotification = () => {
@@ -51,7 +52,7 @@ class ButtonBox extends React.Component {
       <>
         <div className="button_box">
           <button
-            className={isClicked ? "active" : ""}
+            className={isClicked ? "active" : "like_btn"}
             onClick={this.handleAddLikes}
           >
             <div
