@@ -15,15 +15,25 @@ class Signup extends React.Component {
       re_pw: "",
       emailCheck: "",
       nicknameCheck: "",
-      pwCheck: ""
+      pwCheck: "",
+      emailTag: "",
+      message: "",
+      agreeAll: false,
+      box: true
     };
   }
 
   inputemail = e => {
-    console.log(e.target.value);
-
+    // console.log(e.target.value);
     this.setState({
       email: e.target.value
+    });
+  };
+
+  handleEmailSelect = e => {
+    console.log(e.target.value);
+    this.setState({
+      emailTag: e.target.value
     });
   };
 
@@ -33,11 +43,23 @@ class Signup extends React.Component {
       pw: e.target.value
     });
     console.log(this.state.pw);
-    // if (e.target.value.length > 8) {
-    //   alert("필수항목");
-    // }
   };
+  /*handlePasword = e =>{
 
+    this.setState({
+      if (pw: e.target.value === "default")
+       return 
+    })
+  }
+  */
+
+  //   handleapassnecessary = e => {
+  //     this.setState({
+  //       necessary: e.target.value
+  //  if( necessary.length != 0)
+
+  //     });
+  // };
   handlePasswordCheck = e => {
     console.log(e.target.value);
     this.setState({
@@ -54,9 +76,23 @@ class Signup extends React.Component {
   //   alert("2자 이상 입력해주세요");
   // }
 
+  handleAgreeAll = () => {
+    this.setState({
+      agreeAll: !this.state.agreeAll
+    });
+  };
+
+  handleAgreebox = () => {
+    this.setState({
+      box: this.state.box
+    });
+  };
+
   handleSignup = () => {
     console.log(
-      `email:${this.state.email}, pw:${this.state.pw},${this.state.nicknameCheck}`
+      `email:${this.state.email + "@" + this.state.emailTag}, pw:${
+        this.state.pw
+      },${this.state.nicknameCheck}`
     );
     fetch("http://10.58.1.56:8000/user", {
       method: "POST",
@@ -64,7 +100,7 @@ class Signup extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        email: this.state.email,
+        email: this.state.email + "@" + this.state.emailTag,
         password: this.state.pw,
         name: this.state.nicknameCheck
       })
@@ -73,6 +109,7 @@ class Signup extends React.Component {
       .then(res => {
         if (res) {
           console.log("ok");
+          this.props.history.push("/login");
         } else {
           console.log("no");
         }
@@ -82,7 +119,7 @@ class Signup extends React.Component {
   render() {
     // console.log(this.state.email);
     return (
-      <div className="main">
+      <div className="main SignUpMain">
         <img className="mainlogo" src={Logo} alt="로고"></img>
         <div className="secondmain">
           <h1 className="signuptitle">회원가입</h1>
@@ -116,11 +153,14 @@ class Signup extends React.Component {
                   ></input>
                 </span>
                 <span className="emailcenter">@</span>
-                <select className="emailright">
+                <select
+                  onChange={this.handleEmailSelect}
+                  className="emailright"
+                >
                   <option selected vlaue disabled>
                     선택해주세요
                   </option>
-                  <option value="naver.com">naver.com</option>
+                  <option>naver.com</option>
                   <option value="hanmail.net">hanmail.net</option>
                   <option value="daum.net">daum.net</option>
                   <option value="gmail.com">gamil.com</option>
@@ -130,9 +170,17 @@ class Signup extends React.Component {
                   <option value="icloud.com">icloud.com</option>
                   <option value="_manual">직접입력</option>
                 </select>
+                <div
+                  className={
+                    this.state.email.length < 8 && this.state.email.length > 3
+                      ? "nonpassnecessary"
+                      : "passnecessary"
+                  }
+                >
+                  필수 입력 항목입니다
+                </div>
               </div>
             </div>
-
             <div className="passwordwrap">
               <div className="passwordonly"> 비밀번호</div>
               <div className="passwordtext">
@@ -143,6 +191,15 @@ class Signup extends React.Component {
                 type="password"
                 className="passwordtext input"
               ></input>
+              <div
+                className={
+                  this.state.pw.length < 8 && this.state.pw.length > 1
+                    ? "nonpassnecessary"
+                    : "passnecessary"
+                }
+              >
+                필수 입력 항목입니다
+              </div>
             </div>
             <div className="passwordresetwrap">
               <div className="passwordreset">비밀번호 확인 </div>
@@ -151,6 +208,16 @@ class Signup extends React.Component {
                 type="text"
                 className="input"
               ></input>
+              <div
+                className={
+                  this.state.re_pw.length < 8 && this.state.re_pw.length > 1
+                    ? "nonpassnecessary"
+                    : "passnecessary"
+                }
+              >
+                {" "}
+                필수 입력 항목입니다
+              </div>
             </div>
             <div className="nicknamewrap">
               <div className="nickname">별명</div>
@@ -163,6 +230,16 @@ class Signup extends React.Component {
                 type="text"
                 className="input"
               ></input>
+              <div
+                className={
+                  this.state.nicknameCheck.length < 2 &&
+                  this.state.nicknameCheck.length > 0
+                    ? "nonpassnecessary"
+                    : "passnecessary"
+                }
+              >
+                2자 이상 입력해주세요
+              </div>
             </div>
             <div className="aceesswrap">
               <div className=" access">약관 동의</div>
@@ -173,12 +250,23 @@ class Signup extends React.Component {
                 </div>
                 <div className="checkboxwrap">
                   <div className="checkbox1">
-                    <input type="checkbox" className="inbox"></input>
+                    <input
+                      type="checkbox"
+                      checked={this.state.agreeAll}
+                      onChange={this.handleAgreeAll}
+                      className="inbox"
+                    ></input>
                     <span className="sidebox">만 14세 이상입니다.</span>
                     <span className="righttext">(필수)</span>
                   </div>
                   <div className="checkbox2">
-                    <input type="checkbox" className="inbox"></input>
+                    <input
+                      type="checkbox"
+                      onChange={e => {
+                        console.log(e);
+                      }}
+                      className="inbox"
+                    ></input>
                     <a className="checkbox2-1" href="https://ohou.se/usepolicy">
                       이용약관
                     </a>
