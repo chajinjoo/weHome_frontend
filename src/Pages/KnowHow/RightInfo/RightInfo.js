@@ -2,42 +2,81 @@ import React from "react";
 import OtherPeople from "../OtherPeople";
 import RightMainBox from "../RightMainBox";
 import "./rightinfo.scss";
+import fetchAPI from "../../../Utils/fetch";
+import { TOKEN } from "../../../Config/constants";
 
+let token = localStorage.getItem(TOKEN) || "";
 class RightInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      otherPeople: {
-        url:
-          "https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1570975365_.jpeg/320/320",
-        otherId: "2mazi",
-        otherLink: "인스타그램 @_ms.im__",
-        instaLink: "https://___.com"
-      },
-      infoMessage: {
-        title: "온라인집들이",
-        subTitle: "매일 호캉스를 즐기는 기분으로!",
-        date: "2019년 12월 23일 10:05",
-        shareNum: 12
-      }
+      data: {}
     };
   }
 
+  // componentDidMount() {
+  //   fetchAPI("http://localhost:3000/data/rightInfo.json").then(res => {
+  //     this.setState({
+  //       data: res
+  //     });
+  //   });
+  //   // console.log(this.state.data);
+  // }
+
+  handleComments = () => {
+    fetchAPI("http://10.58.5.97:8000/test_app/housewarmingblog", {
+      header: {
+        Authorization: token
+      }
+    }).then(res =>
+      this.setState({
+        data: res.result
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.handleComments();
+  }
+
   render() {
+    if (!this.state.data) return <>"dfasd"</>;
+    console.log(this.state.data);
+    const {
+      category,
+      title,
+      shared_num,
+      created_at,
+      writer_id,
+      writer_profile_image
+    } = this.state.data;
+    // const {
+    //   title,
+    //   subTitle,
+    //   date,
+    //   shareNum
+    // } = this.state.data.data.infoMessage;
+    // const {
+    //   url,
+    //   instaLink,
+    //   otherId,
+    //   otherLink
+    // } = this.state.data.data.otherPeople;
+
     return (
-      <div>
+      <div className="qwer">
         <div className="right_info">
           <RightMainBox
-            title={this.state.infoMessage.title}
-            subTitle={this.state.infoMessage.subTitle}
-            date={this.state.infoMessage.date}
-            shareNum={this.state.infoMessage.shareNum}
+            title={category}
+            subTitle={title}
+            date={created_at}
+            shareNum={shared_num}
           />
           <OtherPeople
-            url={this.state.otherPeople.url}
-            instaLink={this.state.otherPeople.instaLink}
-            otherId={this.state.otherPeople.otherId}
-            otherLink={this.state.otherPeople.otherLink}
+            url={writer_profile_image}
+            // instaLink={instaLink}
+            otherId={writer_id}
+            // otherLink={otherLink}
           />
           <div className="all_product">
             <a href="https://___.com">이 집의 모든 제품 보기</a>

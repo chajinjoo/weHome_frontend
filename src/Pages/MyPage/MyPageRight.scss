@@ -1,0 +1,27 @@
+.like_img_box {
+    padding: 10px;
+    position: relative;
+}
+
+.like_img {
+    width: 250px;
+    height: 250px;
+    vertical-align: top;
+    cursor: pointer;
+
+}
+
+.like_txt {
+
+    color: white;
+    background-color: rgba(0,0,0,.74);
+    padding: 4px;
+    right: 10px;
+    top: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    position: absolute;
+    margin: 10px;
+    cursor: pointer;
+    
+}

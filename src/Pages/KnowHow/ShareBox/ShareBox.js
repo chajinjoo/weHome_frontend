@@ -64,8 +64,10 @@ class ShareBox extends React.Component {
         </div>
         <div className={isClicked ? "on_url_copy" : "off_url_copy"}>
           <div>URL 복사하기</div>
-          <input value={window.location.href} readOnly />
-          <button onClick={this.handleUrlCopy}>복사</button>
+          <div>
+            <input value={window.location.href} readOnly />
+            <button onClick={this.handleUrlCopy}>복사</button>
+          </div>
         </div>
         <div
           className="on_alert_box"

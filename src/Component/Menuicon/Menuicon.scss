@@ -1,24 +1,37 @@
 .menuicon_container {
-    min-width: 1800px;
     background-color: #FFFFFF;
-    height: 170px;
+    // height: 170px;
+    width: 100%;
+
+    .menuicon_lists {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        cursor: pointer;
+
+        .menuicon_img {
+            width: 140px;
+            margin-top: 20px;
+        }
+
+        .munuicon_txt {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+    }
 }
 
-.menuicon_lists {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin-right: 120px;
-    cursor: pointer;
-}
-
-.menuicon_img {
-    width: 140px;
-    margin-top: 20px;
-}
-
-.munuicon_txt {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
+@media screen and (max-width: 768px) {
+    .menuicon_container {
+        width: 100vw;
+        // margin: 30px;
+        .menuicon_lists{
+            width: 100%;
+            // overflow: scroll;
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    }
 }

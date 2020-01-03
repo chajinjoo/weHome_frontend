@@ -1,5 +1,6 @@
 import React from "react";
 import "./ButtonBox.scss";
+import fetchAPI from "../../../Utils/fetch";
 
 class ButtonBox extends React.Component {
   constructor(props) {
@@ -13,6 +14,19 @@ class ButtonBox extends React.Component {
     };
   }
 
+  handleComments = () => {
+    fetchAPI("http://10.58.5.97:8000/test_app/housewarmingblog").then(res =>
+      this.setState({
+        likesNum: parseInt(res.result.likeit_num),
+        scrapNum: parseInt(res.result.scrap_num)
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.handleComments();
+  }
+
   handleAddLikes = () => {
     const { isClicked, likesNum } = this.state;
     const offSet = isClicked ? -1 : 1;
@@ -21,6 +35,7 @@ class ButtonBox extends React.Component {
       likesNum: likesNum + offSet,
       isClicked: !isClicked
     });
+    console.log(this.state.isClicked);
   };
 
   showNotification = () => {
@@ -51,7 +66,7 @@ class ButtonBox extends React.Component {
       <>
         <div className="button_box">
           <button
-            className={isClicked ? "active" : ""}
+            className={isClicked ? "active" : "like_btn"}
             onClick={this.handleAddLikes}
           >
             <div

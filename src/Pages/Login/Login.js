@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./Login.scss";
-import login_logo from "../Images/login_logo.png";
-import fb from "../Images/facebook.png";
-import kakao from "../Images/kaka.png";
-import naver from "../Images/naver.png";
+import login_logo from "../../Images/login_logo.png";
+import fb from "../../Images/facebook.png";
+import kakao from "../../Images/kaka.png";
+import naver from "../../Images/naver.png";
+import { API_URL, TOKEN } from "../../Config/constants";
 
 class Login extends Component {
   constructor(props) {
@@ -31,62 +32,36 @@ class Login extends Component {
     console.log(`EMAIL:${this.state.email}\nPW:${this.state.password}`);
     e.preventDefault();
 
-    // button.addEventListener('click', () => {
-    //   if (userId.value, userPassword.value) {
-    //     a = true;
-    //   }
-
-    //     console.log(userId.value)
-    //     console.log(userPassword.value)
-
-    //     fetch('http://10.58.1.247:8000/user/auth', {
-    //       method: 'POST',
-    //       body: JSON.stringify({
-    //         email: userId.value,
-    //         password: userPassword.value
-    //       })
-
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //           alert(res.access_token)
-
-    //           localStorage.setItem('auth_token', res.access_token);
-    //         })
-
     const login_info = {
       method: "POST",
-      body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      body: JSON.stringify(this.state)
     };
-    fetch("http://10.58.6.121:8000/user/auth", login_info)
+    fetch(`${API_URL}/user/auth`, login_info)
       .then(res => {
         return res.json();
       })
       .then(json => {
         const token = json.access_token;
-        //json형식 {email: "chajanee@gmail.com", success: true}
-        // if (json. === true) {
-        // 서버로 부터 받은 JSON형태의 데이터를 로컬스토리지에 우선 저장한다.
-        window.localStorage.setItem("access_token", token);
+
+        window.localStorage.setItem(TOKEN, token);
         //스테이트에 유저정보를 저장한다.
         // this.setState({
         //   email: '',
         //   password: ''
         // });
-        this.props.history.push("/main");
+        this.props.history.push("/");
+
         alert("로그인 성공");
-        // } else {
-        //   alert("이메일 혹은 비밀번호를 확인하세요");
-        // }
       })
       .catch(err => {
         console.log(err.response);
         alert("로그인실패");
       });
   };
+
   render() {
     return (
       <>
@@ -137,7 +112,7 @@ class Login extends Component {
               <a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fredirect_uri%3Dkakaojs%26response_type%3Dcode%26state%3Djrwq7lkl2ujfgiu375dwtu%26proxy%3DeasyXDM_Kakao_bftqbcgz43_provider%26ka%3Dsdk%252F1.36.1%2520os%252Fjavascript%2520lang%252Fko-KR%2520device%252FMacIntel%2520origin%252Fhttps%25253A%25252F%25252Fohou.se%26origin%3Dhttps%253A%252F%252Fohou.se%26client_id%3D3019c756ec77dd7e0a24e56d9d784f77">
                 <img className="other_logo" src={kakao} alt="kakao" />
               </a>
-              <a href="https://nid.naver.com/oauth2.0/authorize?client_id=OwxOJX0gYfOostweRfGd&redirect_uri=https%3A%2F%2Fohou.se%2Fusers%2Fauth%2Fnaver%2Fcallback&response_type=code&state=cd183a8b4cc07e280efbb938ba55c07fded4e3b4f0b9ab56">
+              <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com">
                 <img className="other_logo" src={naver} alt="naver" />
               </a>
             </div>

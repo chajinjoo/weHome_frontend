@@ -5,7 +5,7 @@ class StoryLeft extends Component {
   render() {
     const { img, title, user_img, user } = this.props;
     return (
-      <div className="today_story_main">
+      <div className="today_story_main" onClick={this.props.onClick}>
         <div className="today_story_container">
           <div className="today_story_content">
             <div className="today_story_box">
