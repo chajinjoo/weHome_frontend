@@ -128,7 +128,7 @@ class Signup extends React.Component {
     // console.log(this.state.email);
     return (
       <div className="main SignUpMain">
-        <Link to="/login"
+        <Link to="/login">
           <img className="mainlogo" src={Logo} alt="로고"></img>
         </Link>
         <div className="secondmain">
