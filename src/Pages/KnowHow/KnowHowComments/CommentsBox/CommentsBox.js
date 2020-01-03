@@ -5,6 +5,9 @@ import Rightarrow from "../../../../Images/Rightarrow.png";
 import UserComment from "../UserComment";
 import CommentCount from "../CommentCount/CommentCount";
 import fetchAPI from "../../../../Utils/fetch";
+import { TOKEN } from "../../../../Config/constants";
+
+let token = localStorage.getItem(TOKEN) || "";
 
 class CommentsBox extends React.Component {
   constructor(props) {
@@ -59,7 +62,11 @@ class CommentsBox extends React.Component {
   //     });
   // };
   handleComments = () => {
-    fetchAPI("http://10.58.5.97:8000/test_app/comments").then(res =>
+    fetchAPI("http://10.58.5.97:8000/test_app/comments", {
+      headers: {
+        Authorization: token
+      }
+    }).then(res =>
       this.setState({
         Usercomment: res.result
       })
@@ -79,7 +86,8 @@ class CommentsBox extends React.Component {
     fetch("http://10.58.5.97:8000/test_app/comments ", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: token
       },
       body: JSON.stringify({
         contents_text: e.target.title.value
@@ -119,23 +127,18 @@ class CommentsBox extends React.Component {
     fetch("http://10.58.5.97:8000/test_app/erasecomments ", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: token
       },
       body: JSON.stringify({
         result: newArr
       })
     })
       .then(res => res.json())
-      .then(
-        res =>
-          this.setState({
-            Usercomment: res.result
-          })
-        // console.log(a);
-        // console.log(newArr);
-        // this.setState({
-        //   Usercomment: newArr
-        // });
+      .then(res =>
+        this.setState({
+          Usercomment: res.result
+        })
       );
   };
 
@@ -143,29 +146,26 @@ class CommentsBox extends React.Component {
     this.setState({
       currentPage: pageNum
     });
-    // console.log(pageNum);
   };
 
   render() {
-    const starting = (this.state.currentPage - 1) * 5;
-    const ending = (this.state.currentPage - 1) * 5 + 5;
-    const Comments = this.state.Usercomment.slice(
-      starting,
-      ending
-    ).map((post, index) => (
+    const { currentPage, Usercomment } = this.state;
+
+    const starting = (currentPage - 1) * 5;
+    const ending = (currentPage - 1) * 5 + 5;
+    const Comments = Usercomment.slice(starting, ending).map((post, index) => (
       <UserComment
         key={index}
         Usercomment={post}
         handleRemove={() => this.handleRemove(index)}
       />
     ));
-    const a = this.state.Usercomment;
-    console.log(a);
+
     return (
       <>
         <div className="comment_title">
           <h1>댓글</h1>
-          <span>{this.state.Usercomment.length}</span>
+          <span>{Usercomment.length}</span>
         </div>
 
         <form onSubmit={this.onSubmit} className="comment_inputBox">
@@ -194,10 +194,7 @@ class CommentsBox extends React.Component {
 
         <div className="comment_user_box">
           <div className="comment_user_write">{Comments}</div>
-          <CommentCount
-            paginate={this.paginate}
-            data={this.state.Usercomment}
-          />
+          <CommentCount paginate={this.paginate} data={Usercomment} />
         </div>
       </>
     );

@@ -26,7 +26,8 @@ class MainDealSelect extends React.Component {
   }
 
   handleChoose = e => {
-    const a = this.state.selectProduct;
+    const { selectProduct, colorSelcet, productPrice } = this.state;
+    const a = selectProduct;
     let bb = [];
     let pp = [];
     for (let i = 1; i < a.length; i++) {
@@ -38,8 +39,8 @@ class MainDealSelect extends React.Component {
       }
     }
     this.setState({
-      colorSelcet: this.state.colorSelcet.concat(bb),
-      productPrice: this.state.productPrice.concat(pp)
+      colorSelcet: colorSelcet.concat(bb),
+      productPrice: productPrice.concat(pp)
     });
   };
 
@@ -60,9 +61,10 @@ class MainDealSelect extends React.Component {
     if (!this.state.selectProduct) return <></>;
     // console.log(this.state.productPrice);
     // console.log(this.state.colorSelcet);
+    const { productPrice } = this.state;
     let maxPrice = 0;
-    for (let i = 0; i < this.state.productPrice.length; i++) {
-      maxPrice += parseFloat(this.state.productPrice[i]);
+    for (let i = 0; i < productPrice.length; i++) {
+      maxPrice += parseFloat(productPrice[i]);
     }
 
     // const options = this.state.countNum.map((el, index) => (

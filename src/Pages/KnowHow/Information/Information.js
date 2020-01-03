@@ -12,14 +12,25 @@ class Information extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    fetchAPI("http://localhost:3000/data/information.json").then(data => {
-      // console.log(data);
+  // componentDidMount = () => {
+  //   fetchAPI("http://localhost:3000/data/information.json").then(data => {
+  //     // console.log(data);
+  //     this.setState({
+  //       information: data
+  //     });
+  //   });
+  // };
+  handleComments = () => {
+    fetchAPI("http://10.58.5.97:8000/test_app/housewarmingblog").then(res =>
       this.setState({
-        information: data
-      });
-    });
+        information: res.result.house_info
+      })
+    );
   };
+
+  componentDidMount() {
+    this.handleComments();
+  }
 
   render() {
     const { userInfo, information } = this.state;
