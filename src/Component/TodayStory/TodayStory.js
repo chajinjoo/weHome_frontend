@@ -56,7 +56,7 @@ class TodayStory extends Component {
 
         <div className="total_story_box">
           <Link
-            to="/knowhow"
+            to="/knowhow/331247"
             style={{ textDecoration: "none", color: "black" }}
           >
             <div className="storyleft_box">
