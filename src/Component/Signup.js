@@ -4,6 +4,8 @@ import Logo1 from "../Images/facebook.png";
 import Logo2 from "../Images/kaka.png";
 import Logo3 from "../Images/naver.png";
 import "./signup.scss";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -88,13 +90,18 @@ class Signup extends React.Component {
     });
   };
 
+  movePage = () => {
+    console.log("hi");
+    this.props.history.push("/login");
+  };
+
   handleSignup = () => {
     console.log(
       `email:${this.state.email + "@" + this.state.emailTag}, pw:${
         this.state.pw
       },${this.state.nicknameCheck}`
     );
-    fetch("http://10.58.1.56:8000/user", {
+    fetch("http://10.58.5.97:8000/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -107,7 +114,8 @@ class Signup extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        if (res) {
+        console.log(res);
+        if (res.message === "SUCCESS") {
           console.log("ok");
           this.props.history.push("/login");
         } else {
@@ -120,7 +128,9 @@ class Signup extends React.Component {
     // console.log(this.state.email);
     return (
       <div className="main SignUpMain">
-        <img className="mainlogo" src={Logo} alt="로고"></img>
+        <Link to="/login">
+          <img className="mainlogo" src={Logo} alt="로고"></img>
+        </Link>
         <div className="secondmain">
           <h1 className="signuptitle">회원가입</h1>
           <div className="signupwrap">
@@ -172,7 +182,7 @@ class Signup extends React.Component {
                 </select>
                 <div
                   className={
-                    this.state.email.length < 8 && this.state.email.length > 3
+                    this.state.email.length < 4 && this.state.email.length > 1
                       ? "nonpassnecessary"
                       : "passnecessary"
                   }
@@ -205,7 +215,7 @@ class Signup extends React.Component {
               <div className="passwordreset">비밀번호 확인 </div>
               <input
                 onChange={this.handlePasswordCheck}
-                type="text"
+                type="password"
                 className="input"
               ></input>
               <div
@@ -313,4 +323,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
