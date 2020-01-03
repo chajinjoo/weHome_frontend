@@ -4,6 +4,7 @@ import TodayDealData from "./TodayDealData";
 import "./TodayDeal.scss";
 import fetchAPI from "../../Utils/fetch";
 import { TOKEN } from "../../Config/constants";
+import { Link } from "react-router-dom";
 
 let token = localStorage.getItem(TOKEN) || "";
 
@@ -35,23 +36,25 @@ class TodayDeal extends Component {
           <div className="today_deal_title">오늘의 딜</div>
           <div className="today_deal_title2">더보기</div>
         </div>
-        <div className="total_deal_box">
-          {this.state.TodayDealData.map((
-            el //this.state.TodayDealData.map
-          ) => (
-            <TodayDealCenter
-              key={el.num}
-              // data={el}
-              img={el.deal_img}
-              subtitle={el.deal_sub_title}
-              title={el.deal_title}
-              sale={el.deal_sale}
-              price={el.deal_price}
-              stars={el.deal_stars}
-              review={el.deal_review}
-            />
-          ))}
-        </div>
+        <Link to="/dealpage" style={{ textDecoration: "none", color: "black" }}>
+          <div className="total_deal_box">
+            {this.state.TodayDealData.map((
+              el //this.state.TodayDealData.map
+            ) => (
+              <TodayDealCenter
+                key={el.num}
+                // data={el}
+                img={el.deal_img}
+                subtitle={el.deal_sub_title}
+                title={el.deal_title}
+                sale={el.deal_sale}
+                price={el.deal_price}
+                stars={el.deal_stars}
+                review={el.deal_review}
+              />
+            ))}
+          </div>
+        </Link>
       </section>
     );
   }

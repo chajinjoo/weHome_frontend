@@ -64,14 +64,31 @@ class Nav extends Component {
 
               <div className="nav_right">
                 <div className="nav_right_icon_box">
-                  <div className="nav_icon_box">
+                  {/* <div>로그인</div>
+                  <div>회원가입</div> */}
+
+                  {/* <div className="nav_icon_box">
                     <i className="far fa-bookmark"></i>
                   </div>
                   <div className="nav_icon_box">
                     <i className="far fa-bell"></i>
-                  </div>
+                  </div> */}
                   <div className="nav_icon_box">
                     <i className="fas fa-shopping-cart"></i>
+                  </div>
+                  <div className="aa">
+                    <Link
+                      to="/login"
+                      style={{ textDecoration: "none", color: "#757575" }}
+                    >
+                      <div className="nav_icon_box2">로그인</div>
+                    </Link>
+                    <Link
+                      to="/signup"
+                      style={{ textDecoration: "none", color: "#757575" }}
+                    >
+                      <div className="nav_icon_box2">회원가입</div>
+                    </Link>
                   </div>
                 </div>
                 <button className="nav_icon_btn" onClick={this.openModal}>
