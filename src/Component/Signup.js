@@ -22,7 +22,7 @@ class Signup extends React.Component {
       box: true
     };
   }
- 
+
   inputemail = e => {
     // console.log(e.target.value);
     this.setState({
@@ -30,10 +30,10 @@ class Signup extends React.Component {
     });
   };
 
-  handleEmailSelect = (e) => {
+  handleEmailSelect = e => {
     console.log(e.target.value);
     this.setState({
-      emailTag:e.target.value
+      emailTag: e.target.value
     });
   };
 
@@ -75,22 +75,24 @@ class Signup extends React.Component {
   // if (e.target.value.length < 1) {
   //   alert("2자 이상 입력해주세요");
   // }
-  
-  handleAgreeAll = () =>{
+
+  handleAgreeAll = () => {
     this.setState({
-      agreeAll:!this.state.agreeAll
-    })
+      agreeAll: !this.state.agreeAll
+    });
   };
 
-  handleAgreebox = ()=>{
+  handleAgreebox = () => {
     this.setState({
       box: this.state.box
-    })
+    });
   };
 
   handleSignup = () => {
     console.log(
-      `email:${this.state.email + "@" + this.state.emailTag}, pw:${this.state.pw},${this.state.nicknameCheck}`
+      `email:${this.state.email + "@" + this.state.emailTag}, pw:${
+        this.state.pw
+      },${this.state.nicknameCheck}`
     );
     fetch("http://10.58.1.56:8000/user", {
       method: "POST",
@@ -107,6 +109,7 @@ class Signup extends React.Component {
       .then(res => {
         if (res) {
           console.log("ok");
+          this.props.history.push("/login");
         } else {
           console.log("no");
         }
@@ -167,14 +170,14 @@ class Signup extends React.Component {
                   <option value="icloud.com">icloud.com</option>
                   <option value="_manual">직접입력</option>
                 </select>
-                      <div
-                className={
-                  this.state.email.length < 8 && this.state.email.length > 3
-                    ? "nonpassnecessary"
-                    : "passnecessary"
-                }
-              >
-                필수 입력 항목입니다
+                <div
+                  className={
+                    this.state.email.length < 8 && this.state.email.length > 3
+                      ? "nonpassnecessary"
+                      : "passnecessary"
+                  }
+                >
+                  필수 입력 항목입니다
                 </div>
               </div>
             </div>
@@ -242,25 +245,28 @@ class Signup extends React.Component {
               <div className=" access">약관 동의</div>
               <div className="access_all">
                 <div className="checkboxs">
-                  <input type="checkbox"
-                   className="inbox"></input>
+                  <input type="checkbox" className="inbox"></input>
                   <span className="accesstop">전체동의</span>
                 </div>
                 <div className="checkboxwrap">
                   <div className="checkbox1">
-                    <input type="checkbox" checked={this.state.agreeAll} onChange={this.handleAgreeAll}
-                  
-                    className= "inbox"
-                      ></input>
+                    <input
+                      type="checkbox"
+                      checked={this.state.agreeAll}
+                      onChange={this.handleAgreeAll}
+                      className="inbox"
+                    ></input>
                     <span className="sidebox">만 14세 이상입니다.</span>
                     <span className="righttext">(필수)</span>
                   </div>
                   <div className="checkbox2">
-                    <input type="checkbox" 
-                    onChange={
-                      (e) => {console.log(e)}
-                    }
-                    className="inbox"></input>
+                    <input
+                      type="checkbox"
+                      onChange={e => {
+                        console.log(e);
+                      }}
+                      className="inbox"
+                    ></input>
                     <a className="checkbox2-1" href="https://ohou.se/usepolicy">
                       이용약관
                     </a>
@@ -308,5 +314,3 @@ class Signup extends React.Component {
 }
 
 export default Signup;
-
-
