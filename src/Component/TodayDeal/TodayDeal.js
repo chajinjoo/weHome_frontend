@@ -2,9 +2,33 @@ import React, { Component } from "react";
 import TodayDealCenter from "./TodayDealCenter";
 import TodayDealData from "./TodayDealData";
 import "./TodayDeal.scss";
+import fetchAPI from "../../Utils/fetch";
+import { TOKEN } from "../../Config/constants";
+
+let token = localStorage.getItem(TOKEN) || "";
 
 class TodayDeal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      TodayDealData: []
+    };
+  }
+
+  componentDidMount() {
+    fetchAPI("http://10.58.5.97:8000/test_app/maintodaydeal", {
+      headers: {
+        Authorization: token
+      }
+    }).then(res => {
+      this.setState({
+        TodayDealData: res.result
+      });
+    });
+  }
+
   render() {
+    // if (!this.state.TodayDealData) return <></>;
     return (
       <section className="deal_section">
         <div className="total_deal_title">
@@ -12,7 +36,9 @@ class TodayDeal extends Component {
           <div className="today_deal_title2">더보기</div>
         </div>
         <div className="total_deal_box">
-          {TodayDealData.map(el => (
+          {this.state.TodayDealData.map((
+            el //this.state.TodayDealData.map
+          ) => (
             <TodayDealCenter
               key={el.num}
               // data={el}

@@ -2,8 +2,25 @@ import React, { Component } from "react";
 import "./Nav.scss";
 import home_logo from "../../Images/home_logo.png";
 import house_logo from "../../Images/house_logo.png";
+import Modal from "../Modal/Modal";
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+  }
+
+  openModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ isModalOpen: false });
+  };
+
   render() {
     return (
       <>
@@ -15,19 +32,25 @@ class Nav extends Component {
           <div className="nav_body">
             <div className="nav_left">
               {/* <div></div> */}
-              <img
-                id="nav_main_logo"
-                className="home_logo"
-                src={home_logo}
-                alt="home_logo"
-              />
+              <Link to="/">
+                <img
+                  id="nav_main_logo"
+                  className="home_logo"
+                  src={home_logo}
+                  alt="home_logo"
+                />
+              </Link>
               <div className="nav_left_btns">
                 <ul className="nav_lists">
-                  <li className="nav_list">커뮤니티</li>
-                  <li id="list1" className="nav_list">
-                    스토어
-                  </li>
-                  <li className="nav_list">전문가시공</li>
+                  <li className="nav_list1">커뮤니티</li>
+                  <a href="https://ohou.se/store">
+                    <li id="list1" className="nav_list">
+                      스토어
+                    </li>
+                  </a>
+                  <a href="https://ohou.se/experts">
+                    <li className="nav_list">전문가시공</li>
+                  </a>
                 </ul>
               </div>
             </div>
@@ -51,7 +74,7 @@ class Nav extends Component {
                     <i className="fas fa-shopping-cart"></i>
                   </div>
                 </div>
-                <button className="nav_icon_btn">
+                <button className="nav_icon_btn" onClick={this.openModal}>
                   <div className="nav_icon_box">
                     <img
                       className="smile"
@@ -59,6 +82,10 @@ class Nav extends Component {
                       alt="smile"
                     />
                   </div>
+                  <Modal
+                    isOpen={this.state.isModalOpen}
+                    close={this.closeModal}
+                  />
                   <i className="fas fa-caret-down"></i>
                 </button>
               </div>
@@ -70,7 +97,7 @@ class Nav extends Component {
           <div className="category_body">
             <div className="category_left">
               <ul className="category_lists">
-                <li className="category_list">홈</li>
+                <li className="category_list1">홈</li>
                 <li className="category_list">사진</li>
                 <li className="category_list">집들이</li>
                 <li className="category_list">노하우</li>

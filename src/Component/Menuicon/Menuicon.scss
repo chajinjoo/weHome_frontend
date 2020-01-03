@@ -1,6 +1,6 @@
 .menuicon_container {
     background-color: #FFFFFF;
-    height: 170px;
+    // height: 170px;
     width: 100%;
 
     .menuicon_lists {
@@ -23,7 +23,15 @@
 }
 
 @media screen and (max-width: 768px) {
-    .menuicon_img {
-        width: 70%;
+    .menuicon_container {
+        width: 100vw;
+        // margin: 30px;
+        .menuicon_lists{
+            width: 100%;
+            // overflow: scroll;
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
     }
 }

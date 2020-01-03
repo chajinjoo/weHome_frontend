@@ -52,6 +52,15 @@
     }
 }
 
+.nav_list1 {
+    color: #35C5F0;
+    font-size: 18px;
+    font-weight: bold;
+    
+    padding: 15px;
+    cursor: pointer;
+}
+
 
 .nav_center {
     display: flex;
@@ -170,6 +179,15 @@
     }
 }
 
+.category_list1 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #35C5F0;
+    padding: 12px;
+    cursor: pointer;
+}
+
 .download {
     font-weight: bold;
     color: #8f8d8d;
@@ -271,7 +289,7 @@
     }
 
     .category_list {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .category {
@@ -286,4 +304,8 @@
     .nav_center {
         display: none;
     }
+}
+
+a {
+    text-decoration: none;
 }

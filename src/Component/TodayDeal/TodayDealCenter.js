@@ -22,13 +22,13 @@ class StoryDealCenter extends Component {
             <div className="deal_sub_title">{subtitle}</div>
             <div className="deal_title">{title}</div>
             <div className="deal_total">
-              <div className="deal_sale">{sale}</div>
+              <div className="deal_sale">{sale}%</div>
               <div className="deal_price">{price}</div>
             </div>
             <div className="deal_score">
               <i className="fas fa-star"></i>
               <div className="deal_stars">{stars}</div>
-              <div className="deal_review">{review}</div>
+              <div className="deal_review">리뷰 {review}</div>
             </div>
           </div>
         </div>

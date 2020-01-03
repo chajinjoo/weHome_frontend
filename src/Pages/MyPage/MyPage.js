@@ -4,8 +4,31 @@ import Footer from "../../Component/Footer/Footer";
 import "../MyPage/MyPage.scss";
 import MyPageData from "./MyPageData";
 import MyPageRight from "./MyPageRight";
+import fetchAPI from "../../Utils/fetch";
+import { TOKEN } from "../../Config/constants";
+
+let token = localStorage.getItem(TOKEN) || "";
 
 class MyPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      MyPageData: []
+    };
+  }
+
+  componentDidMount() {
+    fetchAPI("http://10.58.5.97:8000/test_app/likeit", {
+      headers: {
+        Authorization: token
+      }
+    }).then(res => {
+      this.setState({
+        MyPageData: res.result
+      });
+    });
+  }
+
   render() {
     return (
       <>
@@ -47,7 +70,9 @@ class MyPage extends Component {
           </div>
           <div className="mypage_like_feed">
             <div className="mypage_like_content">
-              {MyPageData.map(el => (
+              {this.state.MyPageData.map((
+                el //this.state.MyPageData.map
+              ) => (
                 <MyPageRight key={el.num} like_img={el.like_img} />
               ))}
             </div>
