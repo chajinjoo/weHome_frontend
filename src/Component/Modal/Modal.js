@@ -16,9 +16,21 @@ const Modal = ({ isOpen, close }) => {
                   마이페이지
                 </button>
               </Link>
-              <Link to="/signup">
+              <button className="modal_btn" onClick={close}>
+                나의쇼핑
+              </button>
+              <button className="modal_btn" onClick={close}>
+                이벤트
+              </button>
+              <button className="modal_btn" onClick={close}>
+                전문가신청
+              </button>
+              <button className="modal_btn" onClick={close}>
+                판매자신청
+              </button>
+              <Link to="/login">
                 <button className="modal_btn" onClick={close}>
-                  회원가입
+                  로그아웃
                 </button>
               </Link>
             </div>
