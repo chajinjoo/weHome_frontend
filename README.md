@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# weHome Project
 
-## Available Scripts
+- 코딩 1개월차 wecode 5기 수강생들의 2주 클론 프로젝트입니다.
+- 프론트엔드 3명, 백엔드 1명의 팀으로 구성
 
-In the project directory, you can run:
+# 목표
 
-### `yarn start`
+- 오늘의 집의 회원가입, 로그인, 메인페이지, 집들이, 딜 페이지 구현.
+- 실제 Back-End API를 통해 Data를 **POST/GET** 해보기.
+- 회원가입과 로그인 기능을 통해 **access_token**을 실제로 주고받기
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 사용된 기술
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Front-End: **HTML**, **Sass**, **ReactJS**
+- Back-End: **Python**, **Django**, **MySQL** ([Back-End Repository 주소](https://github.com/wecode-bootcamp-korea/weHome_backend))
 
-### `yarn test`
+# 기능
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 회원가입 / 로그인
 
-### `yarn build`
+- 회원가입 및 로그인(Bcrypt 암호화 및 JWT Access Token 전송)
+- 아이디/이메일/패스워드 등의 회원가입정책에 따른 입력값의 유효성 체크
+- 회원가입 입력사항을 백엔드 API로 전달(fetch)
+- 회원가입 성공 후 로그인페이지로 페이지 전환(React Router)
+- 로그인 성공 시 백엔드로 부터 전달받은 JWT Token을 localstorage에 저장
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 메인페이지
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- carousel / slider 을 이용해 사이드 이벤트 배너 구현
+- transform 을 이용하여 타이틀, 오늘의 스토리, 딜 section Image 줌 이벤트 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 마이페이지
 
-### `yarn eject`
+- 벡엔드 API에 해당 유저가 좋아요한 콘텐츠를 FETCH를 통해 전달받음
+- 전달받은 데이터를 MAP함수를 이용해서 화면에 나타냄
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 집들이
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Toggle을 이용한 버튼 이벤트 구현
+- 집들이 페이지 댓글기능 pagination 구현
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 제품상세페이지
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- onMouseover 이벤트 구현
+- 제품 상세 옵션 선택 기능 구현
 
-## Learn More
+# 데모영상
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[![Watch the video](https://i9.ytimg.com/vi/_wOrX7pm26Q/mq1.jpg?sqp=CIqdx_AF&rs=AOn4CLAywGZ_rvWFggVWy0Q7eDpo26AD_w)](https://youtube.be/watch?v=_wOrX7pm26Q)
